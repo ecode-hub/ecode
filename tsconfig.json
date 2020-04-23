@@ -11,8 +11,23 @@
     "allowJs": true,
     "baseUrl": "./",
     "paths": {
+      "@utils": [
+        "src/utils/index.ts"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@constants": [
+        "src/constants/index.ts"
+      ],
       "@containers/*": [
         "src/containers/*"
+      ],
+      "@constants/*": [
+        "src/constants/*"
       ]
     }
   }

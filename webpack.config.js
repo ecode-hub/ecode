@@ -39,14 +39,13 @@ module.exports = {
       }
     ]
   },
-  devServer: {
-    port: 3000,
-    hot: true
-  },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
-      "@containers": path.resolve(__dirname, 'src/containers/')
+      "@utils": path.resolve(__dirname, 'src/utils/'),
+      "@styles": path.resolve(__dirname, 'src/styles/'),
+      "@constants": path.resolve(__dirname, 'src/constants/'),
+      "@containers": path.resolve(__dirname, 'src/containers/'),
     }
   },
   plugins: [
