@@ -1,0 +1,47 @@
+{
+  "name": "react-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --config webpack.config.js",
+    "eslint": "eslint 'src/**/*.{tsx,ts}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{tsx,ts}": "eslint"
+  },
+  "devDependencies": {
+    "@types/eslint": "^6.1.3",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/webpack": "^4.41.2",
+    "@typescript-eslint/eslint-plugin": "^2.15.0",
+    "@typescript-eslint/parser": "^2.15.0",
+    "css-loader": "^3.4.1",
+    "eslint": "^6.8.0",
+    "fork-ts-checker-webpack-plugin": "^4.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.0.10",
+    "lint-staged": "^9.5.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.1.2",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.7.4",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "antd": "4.0.4",
+    "image-conversion": "^2.1.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}

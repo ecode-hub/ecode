@@ -1,0 +1,22 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    // Allows for the parsing of modern ECMAScript features
+    // "ecmaVersion": 2018,
+    // Allows for the use of imports
+    "sourceType": "module"
+    // "ecmaFeatures": {
+    //   // Allows for the parsing of JSX
+    //   "jsx": true
+    // }
+  },
+  "rules": {
+    // 禁止使用 var
+    "no-var": "error",
+    // 分号结尾
+    "semi": "error",
+    // 优先使用 interface 而不是 type
+    "@typescript-eslint/consistent-type-definitions": ["error", "interface"]
+  }
+}
