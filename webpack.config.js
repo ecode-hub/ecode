@@ -24,7 +24,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.scss$/,
+        test: /\.(css|scss)$/,
         use: [
           {
             loader: "style-loader"
@@ -46,6 +46,7 @@ module.exports = {
       "@styles": path.resolve(__dirname, 'src/styles/'),
       "@constants": path.resolve(__dirname, 'src/constants/'),
       "@containers": path.resolve(__dirname, 'src/containers/'),
+      "@components": path.resolve(__dirname, 'src/components/'),
     }
   },
   plugins: [

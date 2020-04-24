@@ -1,6 +1,9 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "plugins": [
+    "@typescript-eslint",
+    "react-hooks"
+  ],
   "parserOptions": {
     // Allows for the parsing of modern ECMAScript features
     // "ecmaVersion": 2018,
@@ -17,6 +20,11 @@
     // 分号结尾
     "semi": "error",
     // 优先使用 interface 而不是 type
-    "@typescript-eslint/consistent-type-definitions": ["error", "interface"]
+    "@typescript-eslint/consistent-type-definitions": [
+      "error",
+      "interface"
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }

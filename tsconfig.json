@@ -23,11 +23,20 @@
       "@constants": [
         "src/constants/index.ts"
       ],
+      "@constants/*": [
+        "src/constants/*"
+      ],
+      "@containers": [
+        "src/containers/index.ts"
+      ],
       "@containers/*": [
         "src/containers/*"
       ],
-      "@constants/*": [
-        "src/constants/*"
+      "@components": [
+        "src/components/index.ts"
+      ],
+      "@components/*": [
+        "src/components/*"
       ]
     }
   }

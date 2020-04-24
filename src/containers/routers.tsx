@@ -9,14 +9,18 @@ import {
 import { ROUTES } from '@constants';
 import Home from './Home';
 import Login from './Login';
+import Card from './Card';
+import NoMatch from './NoMatch';
 
 export default function Routers() {
   return (
     <Router>
       <Switch>
         <Redirect exact={true} from={ROUTES.Root} to={ROUTES.Home} />
-        <Route exact={true} path={ROUTES.Home} component={Home} />
-        <Route exact={true} path={ROUTES.Login} component={Login} />
+        <Route path={ROUTES.Home} component={Home} />
+        <Route path={ROUTES.Login} component={Login} />
+        <Route path={ROUTES.Card} component={Card} />
+        <Route path="*" component={NoMatch} />
       </Switch>
     </Router>
   );

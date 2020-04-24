@@ -17,9 +17,10 @@ const config = require('./webpack.config');
 module.exports = merge(config, {
   devtool: 'source-map',
   devServer: {
-    historyApiFallback: true,
+    hot: true,
+    open: true,
     port: 3000,
-    hot: true
+    historyApiFallback: true
   }
 });
 

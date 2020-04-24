@@ -1,10 +1,10 @@
 import React from 'react';
 import './index.scss';
 
-function Home() {
+function NoMatch() {
   return (
-    <div>Hello ECode!</div>
+    <div>404</div>
   );
 }
 
-export default Home;
+export default NoMatch;
