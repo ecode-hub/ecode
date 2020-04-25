@@ -1,5 +1,9 @@
 @import '~@styles/global.scss';
 
+#wraper {
+  padding-top: $header-height;
+}
+
 #ecode-header {
   font-size: 40px;
   position: fixed;

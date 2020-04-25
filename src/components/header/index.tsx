@@ -2,16 +2,18 @@ import React from 'react';
 
 import './index.scss';
 
-interface Iprops {
+interface IProps {
 
 }
 
 const { useEffect, useRef } = React;
 
-function Header(props: Iprops) {
+function Header(props: IProps) {
   return (
     <header id='ecode-header'>header</header>
   );
 }
 
-export default Header;
+export {
+  Header
+};

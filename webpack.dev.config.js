@@ -20,7 +20,10 @@ module.exports = merge(config, {
     hot: true,
     open: true,
     port: 3000,
-    historyApiFallback: true
+    historyApiFallback: true,
+    overlay: {
+      errors: true
+    },
   }
 });
 
