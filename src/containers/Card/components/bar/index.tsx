@@ -7,7 +7,7 @@ import {
 import './index.scss';
 
 interface IProps {
-  side: ECardSide, // 当前问题卡的方向，正面还是反面
+  side: ECardSide, // 当前问题卡的方向
   showAnswer(): void, // 显示问题方法
   score(quality: number): void, // 评分方法
 }
