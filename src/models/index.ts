@@ -1,5 +1,1 @@
-import { ECardSide } from './card';
-
-export {
-  ECardSide
-};
+export * from './card';

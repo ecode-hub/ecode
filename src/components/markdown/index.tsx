@@ -15,6 +15,8 @@ function Markdown(props: IProps) {
 
   useEffect(() => {
     const md = new MarkdownIt();
+    console.log('MarkdownIt new');
+
     const result = md.render(data);
     ref.current.innerHTML = result;
   }, [data]);

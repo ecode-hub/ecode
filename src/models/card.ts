@@ -6,6 +6,17 @@ enum ECardSide {
   BOTTOM = 'bottom'
 }
 
+interface ICard {
+  id: string;
+  question: string;
+  description?: string;
+  answer: string;
+  created_at: number;
+  updated_at: number;
+}
+
+
 export {
-  ECardSide
+  ECardSide,
+  ICard
 };

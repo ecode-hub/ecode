@@ -1,5 +1,4 @@
-import React, { useState, useCallback } from 'react';
-import { Button } from 'antd';
+import React, { useState, useCallback, useEffect } from 'react';
 import {
   Markdown,
   Header,
@@ -10,16 +9,29 @@ import {
   BarWraper
 } from './components';
 import {
-  ECardSide
+  ECardSide,
+  ICard
 } from '@models';
+import {
+  data
+} from './_mock';
 
 import './index.scss';
 
-
 function Card() {
-  const data = '# hello';
+  const [side, setSide] = useState<ECardSide>(ECardSide.TOP);
+  const [cardData, setCardData] = useState<ICard[]>([]);
+  const [currentCardIndex, setCurrentCardIndex] = useState<number>(0);
+  const currentCard = cardData[currentCardIndex];
 
-  const [side, setSide] = useState<ECardSide>();
+  useEffect(() => {
+    // TODO: 获取后端数据
+    setTimeout(() => {
+      if (data.length) {
+        setCardData(data);
+      }
+    });
+  }, []);
 
   const onShowAnswer = () => {
     setSide(ECardSide.BOTTOM);
@@ -27,15 +39,31 @@ function Card() {
 
   const onScore = (quality: number) => {
     console.log(quality);
-
+    if (cardData.length - 1 > currentCardIndex) {
+      setCurrentCardIndex(currentCardIndex + 1);
+    } else {
+      setCurrentCardIndex(0);
+    }
     setSide(ECardSide.TOP);
+  };
+
+  const renderMarkdown = () => {
+    if (currentCard) {
+      if (side === ECardSide.TOP) {
+        return <Markdown data={currentCard.question} />;
+      } else {
+        return <Markdown data={currentCard.answer} />;
+      }
+    } else {
+      return '加载中';
+    }
   };
 
   return (
     <HeaderWraper>
       <BarWraper>
         <Header />
-        <Markdown data={data} />
+        {renderMarkdown()}
         <Bar
           side={side}
           showAnswer={onShowAnswer}
