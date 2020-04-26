@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, Fragment } from 'react';
 import {
   Markdown,
   Header,
@@ -52,7 +52,13 @@ function Card() {
       if (side === ECardSide.TOP) {
         return <Markdown data={currentCard.question} />;
       } else {
-        return <Markdown data={currentCard.answer} />;
+        return (
+          <Fragment>
+            <Markdown data={currentCard.question} />
+            <div className='horizontal-line'></div>
+            <Markdown data={currentCard.answer} />
+          </Fragment>
+        );
       }
     } else {
       return '加载中';
@@ -63,7 +69,11 @@ function Card() {
     <HeaderWraper>
       <BarWraper>
         <Header />
-        {renderMarkdown()}
+        <div id='main-card'>
+          <div id='markdown-container'>
+            {renderMarkdown()}
+          </div>
+        </div>
         <Bar
           side={side}
           showAnswer={onShowAnswer}

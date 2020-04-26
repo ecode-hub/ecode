@@ -1,0 +1,14 @@
+@import '~@styles/global.scss';
+
+#main-card {
+  width: 700px;
+  padding: 20px 0;
+  margin: auto;
+}
+
+.horizontal-line {
+  width: calc(100% + 100px);
+  border-top: 1px solid $black-100;
+  margin: 20px 0;
+  transform: translate(-50px);
+}
