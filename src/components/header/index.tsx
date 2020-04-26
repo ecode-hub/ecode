@@ -6,8 +6,6 @@ interface IProps {
 
 }
 
-const { useEffect, useRef } = React;
-
 function Header(props: IProps) {
   return (
     <header id='ecode-header'>header</header>

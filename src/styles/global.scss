@@ -1,12 +1,9 @@
-$header-height: 50px;
-$code-bar-height: 100px;
-$border-color: #f1f1f1;
-$font-color: #535a60;
+@import '~@styles/color.scss';
 
+$header-height: 60px;
+$code-bar-height: 80px;
+
+#app,
 #root {
-  height: 100%;
-}
-
-#app {
   height: 100%;
 }

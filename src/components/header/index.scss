@@ -13,6 +13,8 @@
   right: 0;
   height: $header-height;
   z-index: 1000;
-  border-bottom: 1px solid $border-color;
-  color: $font-color;
+  border-bottom: 1px solid $black-075;
+  color: $black-700;
+  background-color: $black-025;
+  box-shadow: $bs-sm;
 }

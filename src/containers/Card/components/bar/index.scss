@@ -6,13 +6,13 @@
 }
 
 #card-bar {
-  font-size: 40px;
-  position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
-  height: $code-bar-height;
   z-index: 1000;
-  border-top: 1px solid $border-color;
-  color: $font-color;
+  position: fixed;
+  font-size: 40px;
+  color: $black-700;
+  height: $code-bar-height;
+  border-top: 1px solid $black-075;
 }

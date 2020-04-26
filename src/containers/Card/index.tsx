@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { Button } from 'antd';
 import {
   Markdown,
@@ -9,20 +9,38 @@ import {
   Bar,
   BarWraper
 } from './components';
+import {
+  ECardSide
+} from '@models';
 
 import './index.scss';
 
+
 function Card() {
   const data = '# hello';
+
+  const [side, setSide] = useState<ECardSide>();
+
+  const onShowAnswer = () => {
+    setSide(ECardSide.BOTTOM);
+  };
+
+  const onScore = (quality: number) => {
+    console.log(quality);
+
+    setSide(ECardSide.TOP);
+  };
 
   return (
     <HeaderWraper>
       <BarWraper>
         <Header />
-        <div>card page</div>
         <Markdown data={data} />
-        <Button type='primary'>按钮</Button>
-        <Bar />
+        <Bar
+          side={side}
+          showAnswer={onShowAnswer}
+          score={onScore}
+        />
       </BarWraper>
     </HeaderWraper>
   );
