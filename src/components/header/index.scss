@@ -1,6 +1,7 @@
 @import '~@styles/global.scss';
 
-#wraper {
+#wraper-contain-header {
+  height: 100%;
   padding-top: $header-height;
 }
 
@@ -10,7 +11,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 50px;
+  height: $header-height;
   z-index: 1000;
   border-bottom: 1px solid $border-color;
   color: $font-color;

@@ -1,0 +1,18 @@
+@import '~@styles/global.scss';
+
+#wraper-contain-card-bar {
+  height: 100%;
+  padding-bottom: $code-bar-height;
+}
+
+#card-bar {
+  font-size: 40px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: $code-bar-height;
+  z-index: 1000;
+  border-top: 1px solid $border-color;
+  color: $font-color;
+}

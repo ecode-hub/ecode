@@ -5,6 +5,10 @@ import {
   Header,
   HeaderWraper
 } from '@components';
+import {
+  Bar,
+  BarWraper
+} from './components';
 
 import './index.scss';
 
@@ -13,10 +17,13 @@ function Card() {
 
   return (
     <HeaderWraper>
-      <Header />
-      <div>card page</div>
-      <Markdown data={data} />
-      <Button type='primary'>按钮</Button>
+      <BarWraper>
+        <Header />
+        <div>card page</div>
+        <Markdown data={data} />
+        <Button type='primary'>按钮</Button>
+        <Bar />
+      </BarWraper>
     </HeaderWraper>
   );
 }

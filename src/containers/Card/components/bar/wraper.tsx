@@ -5,7 +5,7 @@ interface IProps {
 
 function Wraper(props: React.PropsWithChildren<IProps>) {
   return (
-    <div id='wraper-contain-header'>
+    <div id='wraper-contain-card-bar'>
       {props.children}
     </div>
   );

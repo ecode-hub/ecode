@@ -27,13 +27,13 @@ module.exports = {
         test: /\.(css|scss)$/,
         use: [
           {
-            loader: "style-loader"
+            loader: 'style-loader'
           },
           {
-            loader: "css-loader"
+            loader: 'css-loader'
           },
           {
-            loader: "sass-loader"
+            loader: 'sass-loader'
           }
         ]
       }
@@ -42,11 +42,11 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
-      "@utils": path.resolve(__dirname, 'src/utils/'),
-      "@styles": path.resolve(__dirname, 'src/styles/'),
-      "@constants": path.resolve(__dirname, 'src/constants/'),
-      "@containers": path.resolve(__dirname, 'src/containers/'),
-      "@components": path.resolve(__dirname, 'src/components/'),
+      '@utils': path.resolve(__dirname, 'src/utils/'),
+      '@styles': path.resolve(__dirname, 'src/styles/'),
+      '@constants': path.resolve(__dirname, 'src/constants/'),
+      '@containers': path.resolve(__dirname, 'src/containers/'),
+      '@components': path.resolve(__dirname, 'src/components/'),
     }
   },
   plugins: [

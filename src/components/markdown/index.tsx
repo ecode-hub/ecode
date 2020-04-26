@@ -1,6 +1,5 @@
 import React from 'react';
 import MarkdownIt from 'markdown-it';
-import { SafeContainer } from '@components';
 import './index.scss';
 
 interface IProps {
@@ -22,12 +21,8 @@ function Markdown(props: IProps) {
     ref.current.innerHTML = result;
   }, [data]);
 
-  throw '123';
-
   return (
-
-    <div id='markdown-container' ref={ref}>markdown</div>
-
+    <div ref={ref}></div>
   );
 }
 
