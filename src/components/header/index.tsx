@@ -99,7 +99,7 @@ function Header(props: RouteComponentProps<IProps>) {
             <li className='nav-empty'></li>
             <li className='nav-card'>
               <Button type='primary' onClick={() => goTo(ROUTES.Card)}>
-                答题
+                学习
               </Button>
             </li>
             <li className='nav-notification'>
