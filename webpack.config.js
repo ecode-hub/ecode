@@ -64,7 +64,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html'
+      template: './index.html',
+      favicon: './src/assets/icons/logo.ico'
     }),
     new ForkTsCheckerWebpackPlugin()
   ]

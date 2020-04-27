@@ -17,6 +17,7 @@ import Notification from './Notification';
 import Edit from './Edit';
 import Subscribed from './Subscribed';
 import Setting from './Setting';
+import About from './About';
 import NoMatch from './NoMatch';
 
 export default function Routers() {
@@ -34,6 +35,7 @@ export default function Routers() {
         <Route path={ROUTES.Edit} component={Edit} />
         <Route path={ROUTES.Subscribed} component={Subscribed} />
         <Route path={ROUTES.Setting} component={Setting} />
+        <Route path={ROUTES.About} component={About} />
         <Route path="*" component={NoMatch} />
       </Switch>
     </Router>

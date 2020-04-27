@@ -10,6 +10,7 @@ const ROUTES = {
   Edit: '/edit',                   // 编辑或者新建问题卡页面
   Subscribed: '/subscribed',       // 标签管理页面
   Setting: '/setting',             // 设置页面
+  About: '/about',             // 设置页面
 };
 
 export {
