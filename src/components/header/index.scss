@@ -3,10 +3,13 @@
 #wraper-contain-header {
   min-height: 100%;
   padding-top: $header-height;
+  max-width: $app-width;
+  width: 100%;
+  margin: 0 auto;
 }
 
 #ecode-header {
-  font-size: 40px;
+  font-size: 18px;
   position: fixed;
   top: 0;
   left: 0;
@@ -17,4 +20,26 @@
   color: $black-700;
   background-color: $black-025;
   box-shadow: $bs-sm;
+  & > .container {
+    @include center-y;
+    max-width: $app-width;
+    width: 100%;
+    margin: 0 auto;
+    & > .main-nav {
+      height: 100%;
+      .nav-list {
+        height: 100%;
+        li {
+          @include center;
+        }
+      }
+    }
+  }
+
+  .header-logo {
+    .logo {
+      width: 36px;
+      height: 36px;
+    }
+  }
 }

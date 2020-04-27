@@ -24,6 +24,17 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.(gif|png|jpe?g|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
+      },
+      {
         test: /\.(css|scss)$/,
         use: [
           {
@@ -43,6 +54,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
       '@utils': path.resolve(__dirname, 'src/utils/'),
+      '@assets': path.resolve(__dirname, 'src/assets/'),
       '@styles': path.resolve(__dirname, 'src/styles/'),
       '@models': path.resolve(__dirname, 'src/models/'),
       '@constants': path.resolve(__dirname, 'src/constants/'),

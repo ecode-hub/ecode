@@ -1,9 +1,18 @@
 @import '~@styles/color.scss';
+@import '~@styles/mixin.scss';
 
 $header-height: 60px;
 $code-bar-height: 80px;
+$app-width: 960px;
 
 #app,
 #root {
   min-height: 100%;
+}
+
+.ul-format {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

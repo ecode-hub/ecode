@@ -40,6 +40,7 @@
     "style-loader": "^1.1.2",
     "ts-loader": "^6.0.4",
     "typescript": "^3.7.4",
+    "url-loader": "^4.1.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0",

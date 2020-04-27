@@ -16,6 +16,7 @@
       "@models": ["src/models/index.ts"],
       "@models/*": ["src/models/*"],
       "@styles/*": ["src/styles/*"],
+      "@assets/*": ["src/assets/*"],
       "@constants": ["src/constants/index.ts"],
       "@constants/*": ["src/constants/*"],
       "@containers": ["src/containers/index.ts"],
