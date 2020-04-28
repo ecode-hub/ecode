@@ -1,6 +1,6 @@
-const merge = require('webpack-merge');
 const path = require('path');
 const webpack = require('webpack');
+const merge = require('webpack-merge');
 const config = require('./webpack.config');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -29,7 +29,6 @@ module.exports = merge(config, {
       }
     ],
   },
-
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -55,6 +54,10 @@ module.exports = merge(config, {
       filename: '[name].[contenthash].css',
       chunkFilename: '[id].[contenthash].css'
     }),
+    new webpack.NormalModuleReplacementPlugin(
+      /.\/src\/environments\/index.ts/,
+      path.resolve(__dirname, 'src/environments/environment.prod.ts'),
+    ),
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin()
   ],

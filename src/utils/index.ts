@@ -1,4 +1,4 @@
-import superMemo2 from './superMemo2';
+import { superMemo2 } from './superMemo2';
 
 export {
   superMemo2

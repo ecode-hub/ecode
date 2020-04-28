@@ -22,7 +22,8 @@
       "@containers": ["src/containers/index.ts"],
       "@containers/*": ["src/containers/*"],
       "@components": ["src/components/index.ts"],
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@environments": ["src/environments/index.ts"]
     }
   }
 }

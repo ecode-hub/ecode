@@ -11,7 +11,7 @@ import {
   InfoCircleFilled,
   LogoutOutlined
 } from '@ant-design/icons';
-import { withRouter, RouteComponentProps, Route } from 'react-router-dom';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { ROUTES } from '@constants';
 
 import logo from '@assets/icons/logo.png';

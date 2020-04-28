@@ -1,3 +1,5 @@
+const path = require('path');
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const config = require('./webpack.config');
 
@@ -24,6 +26,12 @@ module.exports = merge(config, {
     overlay: {
       errors: true
     },
-  }
+  },
+  plugins: [
+    new webpack.NormalModuleReplacementPlugin(
+      /.\/src\/environments\/index.ts/,
+      path.resolve(__dirname, 'src/environments/environment.dev.ts'),
+    ),
+  ]
 });
 

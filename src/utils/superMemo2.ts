@@ -16,7 +16,7 @@ function calcFactor(oldFac: number, quality: number): number {
 * @params {number} a number between 0~5 representing the quality of review. 0 is the worse while 5 is the best.
 * @params {number} the factor of last schedual
 */
-export default function superMemo2(quality: number, lastSchedule: number, lastFactor: number) {
+function superMemo2(quality: number, lastSchedule: number, lastFactor: number) {
   let newFac;
   let curSchedule;
 
@@ -49,3 +49,7 @@ export default function superMemo2(quality: number, lastSchedule: number, lastFa
     isRepeatAgain: quality < 4
   };
 }
+
+export {
+  superMemo2
+};
