@@ -3,6 +3,7 @@ import {
   Header,
   HeaderWraper
 } from '@components';
+import { get } from 'lodash';
 
 import './index.scss';
 
