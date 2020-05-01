@@ -14,7 +14,7 @@
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
     "@typescript-eslint/no-explicit-any": ["warn"],
     "quotes": ["error", "single"],
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/rules-of-hooks": "error"
+    // "react-hooks/exhaustive-deps": "warn"
   }
 }
