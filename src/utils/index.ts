@@ -1,5 +1,2 @@
-import { superMemo2 } from './superMemo2';
-
-export {
-  superMemo2
-};
+export * from './safe-parse';
+export * from './super-memo2';

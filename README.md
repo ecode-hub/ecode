@@ -18,6 +18,7 @@ ECode 目前是一个开源项目，还有很多工作要做，主要包括两�
 - [x] Prettier 格式化 scss
 - [ ] GraphQL
 - [ ] 关键词抽取算法（新建问题时查找有没有类似问题）
+- [ ] 接入 elasticsearch
 - [ ] SSR，服务端渲染（使用 nextjs）
 - [ ] 适配移动端
 
