@@ -1,18 +1,18 @@
 @mixin center {
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 @mixin center-x {
-  height: 100%;
   display: flex;
   justify-content: center;
+  height: 100%;
 }
 
 @mixin center-y {
-  height: 100%;
   display: flex;
   align-items: center;
+  height: 100%;
 }

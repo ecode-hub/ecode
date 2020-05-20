@@ -6,21 +6,23 @@
 }
 
 #card-bar {
-  left: 0;
+  position: fixed;
   right: 0;
   bottom: 0;
+  left: 0;
   z-index: 1000;
-  position: fixed;
-  font-size: 40px;
-  color: $black-700;
   height: $code-bar-height;
+  color: $black-700;
+  font-size: 40px;
   background-color: $white;
   border-top: 1px solid $black-075;
+
   &-buttoms-container {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
+
     & > button {
       margin: 10px;
     }

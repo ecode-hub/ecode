@@ -1,59 +1,72 @@
 @import '~@styles/global.scss';
 
 #wraper-contain-header {
-  min-height: 100%;
-  padding-top: $header-height;
-  max-width: $app-width;
   width: 100%;
+  max-width: $app-width;
+  min-height: 100%;
   margin: 0 auto;
+  padding-top: $header-height;
 }
 
 #ecode-header {
-  font-size: 18px;
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
-  height: $header-height;
+  left: 0;
   z-index: 1000;
-  border-bottom: 1px solid $black-075;
+  height: $header-height;
   color: $black-700;
+  font-size: 18px;
   background-color: $black-025;
+  border-bottom: 1px solid $black-075;
   box-shadow: $bs-sm;
+
   & > .container {
     @include center-y;
-    max-width: $app-width;
+
     width: 100%;
+    max-width: $app-width;
     margin: 0 auto;
+
     & > .main-nav {
       flex: 1;
       height: 100%;
+
       .nav-list {
+        display: flex;
         height: 100%;
         padding: 0 6px 0 20px;
-        display: flex;
+
         li {
           @include center;
+
           width: 80px;
           cursor: pointer;
         }
+
         li:hover {
           color: $blue-600;
         }
+
         .nav-browse {
         }
+
         .nav-statistic {
         }
+
         .nav-empty {
           flex: 1;
         }
+
         .nav-card {
         }
+
         .nav-notification {
           width: 50px;
         }
       }
     }
+
     .header-logo {
       .logo {
         width: 36px;
@@ -61,6 +74,7 @@
         cursor: pointer;
       }
     }
+
     .header-avatar {
       .avatar {
         width: 36px;

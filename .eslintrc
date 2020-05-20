@@ -14,7 +14,11 @@
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
     "@typescript-eslint/no-explicit-any": ["warn"],
     "quotes": ["error", "single"],
-    "react-hooks/rules-of-hooks": "error"
+    "react-hooks/rules-of-hooks": "error",
+    "space-before-function-paren": ["error", "never"],
+    "block-spacing":"error",
+    "key-spacing": ["error", { "beforeColon": false }],
+    "object-curly-spacing": ["error", "always"]
     // "react-hooks/exhaustive-deps": "warn"
   }
 }

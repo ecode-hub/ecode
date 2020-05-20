@@ -10,7 +10,7 @@ interface IProps {
 
 const md = new MarkdownIt();
 const markdown = new MarkdownIt({
-  highlight: function (str, lang) {
+  highlight: function(str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
         return `<pre class="hljs"><code>${hljs.highlight(lang, str, true).value}</code></pre>`;

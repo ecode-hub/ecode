@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useContext } from 'react';
 import { Button, Dropdown, Menu, Modal } from 'antd';
 import {
   BellFilled,
@@ -13,6 +13,7 @@ import {
 } from '@ant-design/icons';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { ROUTES } from '@constants';
+import { ConfigProvider } from '@config';
 
 import logo from '@assets/icons/logo.png';
 import avatarGirl from '@assets/images/avatar-girl.png';
@@ -25,10 +26,14 @@ interface IProps {
 
 function Header(props: RouteComponentProps<IProps>) {
 
+  // Demo: 通过 provider 注入配置
+  // const config = useContext(ConfigProvider);
+  // console.log(config);
+
   const goTo = (path: string) => {
     props.history.push(path);
   };
-
+  
   const onLogOut = () => {
     setTimeout(() => {
       Modal.confirm({

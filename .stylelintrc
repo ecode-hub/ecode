@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-rational-order"
+  ],
+  "plugins": [
+    "stylelint-order",
+    "stylelint-config-rational-order/plugin"
+  ],
+  "rules": {
+    "no-empty-source":null,
+    "color-hex-length":null,
+    "at-rule-no-unknown":null,
+    "block-no-empty":null
+  }
+}
