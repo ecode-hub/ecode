@@ -1,9 +1,9 @@
 @import '~@styles/color.scss';
 
-.login {
+.register {
   padding-top: 60px;
 
-  .login-container {
+  .register-container {
     width: 400px;
     margin: auto;
     padding: 30px 20px;
@@ -21,9 +21,12 @@
 
     footer {
       display: flex;
-      justify-content: space-between;
-      color: $blue;
-      cursor: pointer;
+      justify-content: center;
+
+      span {
+        color: $blue;
+        cursor: pointer;
+      }
     }
   }
 }

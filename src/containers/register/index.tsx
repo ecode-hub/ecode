@@ -1,30 +1,30 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { ROUTES } from '@constants';
 import { Form, Input, Button, Checkbox } from 'antd';
-import { login } from '@services';
+import { ROUTES } from '@constants';
 import logo from '@assets/icons/logo.png';
 import './index.scss';
 
-const LoginForm = () => {
+const RegisterForm = () => {
   const onFinish = values => {
-    login(values).then(res=>{
-      console.log(res);
-    });
     console.log('Success:', values);
   };
 
+  const onFinishFailed = errorInfo => {
+    console.log('Failed:', errorInfo);
+  };
 
   return (
     <Form
-      className="bg-write form"
+      className="form"
       initialValues={{
         remember: true,
       }}
       onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
     >
       <Form.Item
-        name="name"
+        name="username"
         rules={[
           {
             required: true,
@@ -47,36 +47,56 @@ const LoginForm = () => {
         <Input.Password placeholder='密码'/>
       </Form.Item>
 
+      <Form.Item
+        name="passwordConfirm"
+        rules={[
+          {
+            required: true,
+            message: '必填',
+          },
+        ]}
+      >
+        <Input.Password placeholder='确认密码'/>
+      </Form.Item>
+
+      <Form.Item
+        name="email"
+        rules={[
+          {
+            required: true,
+            message: '必填',
+          },
+        ]}
+      >
+        <Input placeholder='邮箱'/>
+      </Form.Item>
+
       <Form.Item >
         <Button type="primary" htmlType="submit" block>
-          登录
+          注册
         </Button>
       </Form.Item>
     </Form>
   );
 };
 
-const Login = () => {
+
+const Register = () => {
   const history = useHistory();
-  const onForgetPassword = () => {
-    
-    history.push(ROUTES.Email.Send);
-  };
-  const onRegister = () => {
-    history.push(ROUTES.Register);
+  const onLogin = () => {
+    history.push(ROUTES.Login);
   };
   return (
-    <div className="login bg-gray full">
-      <div className="login-container bg-write">
+    <div className="register bg-gray full">
+      <div className="register-container bg-write">
         <img className='logo' src={logo}></img>
-        <LoginForm/>
+        <RegisterForm/>
         <footer>
-          <span onClick={onForgetPassword}>忘记密码</span>
-          <span onClick={onRegister}>注册</span>
+          已经有账号？<span onClick={onLogin}>登录</span>
         </footer>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Register;

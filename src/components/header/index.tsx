@@ -67,22 +67,18 @@ function Header(props: RouteComponentProps<IProps>) {
         <LikeFilled />我赞过的
       </Menu.Item>
       <Menu.Item key="4" onClick={() => goTo(ROUTES.Subscribed)}>
-        <TagsFilled />
-        标签管理
+        <TagsFilled />标签管理
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item key="5" onClick={() => goTo(ROUTES.Setting)}>
-        <SettingFilled />
-        设置
+        <SettingFilled />设置
       </Menu.Item>
       <Menu.Item key="6" onClick={() => goTo(ROUTES.About)}>
-        <InfoCircleFilled />
-        关于
+        <InfoCircleFilled />关于
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item key="7" onClick={onLogOut}>
-        <LogoutOutlined />
-        登出
+        <LogoutOutlined />登出
       </Menu.Item>
     </Menu>
   );
@@ -96,15 +92,15 @@ function Header(props: RouteComponentProps<IProps>) {
         <nav className='main-nav'>
           <ul className='ul-format nav-list'>
             <li className='nav-browse' onClick={() => goTo(ROUTES.Browse)}>
-              浏览
+              				浏览
             </li>
             {/* <li className='nav-statistic' onClick={() => goTo(ROUTES.Statistic)}>
-              统计
-            </li> */}
+              				统计
+            			</li> */}
             <li className='nav-empty'></li>
             <li className='nav-card'>
               <Button type='primary' onClick={() => goTo(ROUTES.Card)}>
-                学习
+                				学习
               </Button>
             </li>
             <li className='nav-notification'>

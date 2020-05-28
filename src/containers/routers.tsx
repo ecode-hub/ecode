@@ -1,25 +1,27 @@
 import React, { lazy, Suspense } from 'react';
 import {
-  // HashRouter as Router, // hash 路由
-  BrowserRouter as Router, // history 路由
+  HashRouter as Router, // hash 路由
+  // BrowserRouter as Router, // history 路由
   Switch,
   Route,
   Redirect
 } from 'react-router-dom';
 import { ROUTES } from '@constants';
 
-import Login from './Login';
-import Home from './Home';
-import User from './User';
-import Card from './Card';
-import Browse from './Browse';
-import Statistic from './Statistic';
-import Notification from './Notification';
-import Edit from './Edit';
-import Subscribed from './Subscribed';
-import Setting from './Setting';
-import About from './About';
-import NoMatch from './NoMatch';
+import Login from './login';
+import Register from './register';
+import Home from './home';
+import User from './user';
+import Card from './card';
+import Browse from './browse';
+import Statistic from './statistic';
+import Notification from './notification';
+import Edit from './edit';
+import Subscribed from './subscribed';
+import Setting from './setting';
+import About from './about';
+import Email from './email';
+import NoMatch from './no-match';
 
 // 懒加载，看上去效果没有直接加载好，先用直接加载，如果以后项目变大，再考虑用不用懒加载
 
@@ -51,6 +53,7 @@ export default function Routers() {
       <Switch>
         <Redirect exact={true} from={ROUTES.Root} to={ROUTES.Home} />
         <Route path={ROUTES.Login} component={Login} />
+        <Route path={ROUTES.Register} component={Register} />
         <Route path={ROUTES.Home} component={Home} />
         <Route path={ROUTES.User} component={User} />
         <Route path={ROUTES.Card} component={Card} />
@@ -61,6 +64,7 @@ export default function Routers() {
         <Route path={ROUTES.Subscribed} component={Subscribed} />
         <Route path={ROUTES.Setting} component={Setting} />
         <Route path={ROUTES.About} component={About} />
+        <Route path={ROUTES.Email.Base} component={Email} />
         <Route path="*" component={NoMatch} />
       </Switch>
     </Router>

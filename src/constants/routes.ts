@@ -1,6 +1,7 @@
 const ROUTES = {
   Root: '/',                       // 首页
   Login: '/login',                 // 登录页面
+  Register: '/Register',           // 注册页面
   Home: '/home',                   // 首页
   User: '/user',                   // 用户主页
   Card: '/card',                   // 问答卡页面
@@ -10,7 +11,13 @@ const ROUTES = {
   Edit: '/edit',                   // 编辑或者新建问题卡页面
   Subscribed: '/subscribed',       // 标签管理页面
   Setting: '/setting',             // 设置页面
-  About: '/about',             // 设置页面
+  About: '/about',                 // 设置页面
+  Email: {                          // 邮箱相关页面
+    Base: '/email',                  
+    Send: '/email/send',
+    Success: '/email/success',
+    Fail: '/email/fail',
+  },             
 };
 
 export {

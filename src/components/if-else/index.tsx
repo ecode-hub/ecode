@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 interface IProps {
-  if: boolean;
-  else?: JSX.Element;
+	if: boolean;
+	else?: JSX.Element;
 }
 
 function IfElse(props: IProps & React.PropsWithChildren<IProps>) {
