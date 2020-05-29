@@ -39,7 +39,8 @@ function handleSuccess(response: AxiosResponse) {
 }
 
 function handleError(error: AxiosError) {
-  return Promise.reject(error);
+  const data = error.response.data;
+  return Promise.reject(data);
 }
 
 export {

@@ -1,17 +1,18 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { ROUTES } from '@constants';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button, message } from 'antd';
 import { login } from '@services';
 import logo from '@assets/icons/logo.png';
 import './index.scss';
 
 const LoginForm = () => {
-  const onFinish = values => {
-    login(values).then(res=>{
+  const onFinish = data => {
+    login(data).then(res=>{
       console.log(res);
+    }).catch(err=>{
+      console.log(err);
     });
-    console.log('Success:', values);
   };
 
 
@@ -59,7 +60,6 @@ const LoginForm = () => {
 const Login = () => {
   const history = useHistory();
   const onForgetPassword = () => {
-    
     history.push(ROUTES.Email.Send);
   };
   const onRegister = () => {
