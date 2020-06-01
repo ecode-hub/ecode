@@ -1,0 +1,32 @@
+@import '~@styles/color.scss';
+
+.success {
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+
+  .container {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid $black-200;
+    border-radius: 5px;
+
+    .icon {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      color: $green;
+      font-size: 60px;
+    }
+
+    .message {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0 20px 0;
+
+      span {
+        color: $orange;
+      }
+    }
+  }
+}

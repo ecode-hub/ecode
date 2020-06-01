@@ -2,26 +2,26 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { ROUTES } from '@constants';
 import { Form, Input, Button, message } from 'antd';
+import { $storage } from '@utils';
 import { login } from '@services';
 import logo from '@assets/icons/logo.png';
 import './index.scss';
 
 const LoginForm = () => {
+  const history = useHistory();
   const onFinish = data => {
     login(data).then(res=>{
-      console.log(res);
+      $storage.token = res.token;
+      $storage.tokenTime = Date.now();
+      history.push(ROUTES.Home);
     }).catch(err=>{
-      console.log(err);
+      message.warn(err.message);
     });
   };
 
-
   return (
     <Form
-      className="bg-write form"
-      initialValues={{
-        remember: true,
-      }}
+      className="bg-write"
       onFinish={onFinish}
     >
       <Form.Item
@@ -35,7 +35,6 @@ const LoginForm = () => {
       >
         <Input placeholder='用户名'/>
       </Form.Item>
-
       <Form.Item
         name="password"
         rules={[
@@ -47,7 +46,6 @@ const LoginForm = () => {
       >
         <Input.Password placeholder='密码'/>
       </Form.Item>
-
       <Form.Item >
         <Button type="primary" htmlType="submit" block>
           登录
@@ -60,7 +58,7 @@ const LoginForm = () => {
 const Login = () => {
   const history = useHistory();
   const onForgetPassword = () => {
-    history.push(ROUTES.Email.Send);
+    history.push(ROUTES.ResetPassword.EnterAccount);
   };
   const onRegister = () => {
     history.push(ROUTES.Register);

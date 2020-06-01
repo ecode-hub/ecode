@@ -21,6 +21,7 @@ import Subscribed from './subscribed';
 import Setting from './setting';
 import About from './about';
 import Email from './email';
+import ResetPassword from './reset-password';
 import NoMatch from './no-match';
 
 // 懒加载，看上去效果没有直接加载好，先用直接加载，如果以后项目变大，再考虑用不用懒加载
@@ -65,6 +66,7 @@ export default function Routers() {
         <Route path={ROUTES.Setting} component={Setting} />
         <Route path={ROUTES.About} component={About} />
         <Route path={ROUTES.Email.Base} component={Email} />
+        <Route path={ROUTES.ResetPassword.Base} component={ResetPassword} />
         <Route path="*" component={NoMatch} />
       </Switch>
     </Router>

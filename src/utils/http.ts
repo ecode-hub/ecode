@@ -2,6 +2,7 @@ import axios, { AxiosResponse, AxiosError, AxiosRequestConfig }from 'axios';
 import { SERVER_URL } from '@environments';
 import { $storage } from './storage';
 import { forEach } from 'lodash';
+import { updateToken, updateTokenURL } from '@services';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function obj2FormData(data: any) {
@@ -21,10 +22,29 @@ const $http = axios.create({
   timeout: 1000 * 10,
 });
 
+
+let isUpdateingToken = false;
+
 $http.interceptors.request.use((config: AxiosRequestConfig) => {
-  const token = $storage.token;
+  const { token, tokenTime }  = $storage;
   if (token) {
     config.headers['Authorization'] = `Bearer ${token}`;
+  }
+  // 更新 token，每隔一天更新一次 token
+  if(
+    Date.now() - tokenTime > 1000 * 60 * 60 * 24 && 
+    config.url !== updateTokenURL &&
+    !isUpdateingToken
+  ){
+    isUpdateingToken = true;
+    setTimeout(()=>{
+      updateToken(token).then((res)=>{
+        $storage.token = res.token || '';
+        $storage.tokenTime = Date.now();
+      }).finally(()=>{
+        isUpdateingToken = false;
+      });
+    },1000);
   }
   if (config.params?.keep !== 'yes') {
     config.transformRequest = obj2FormData;

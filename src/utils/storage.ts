@@ -26,6 +26,12 @@ const $storage = {
   get token() {
     return getData<string>('token');
   },
+  set tokenTime(val) {
+    setData('tokenTime', val);
+  },
+  get tokenTime() {
+    return getData<number>('tokenTime');
+  },
 };
 
 export {

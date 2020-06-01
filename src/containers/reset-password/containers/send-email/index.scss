@@ -1,0 +1,14 @@
+@import '~@styles/color.scss';
+
+.send-email {
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+
+  .container {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid $black-200;
+    border-radius: 5px;
+  }
+}

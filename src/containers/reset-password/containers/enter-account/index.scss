@@ -1,0 +1,29 @@
+@import '~@styles/color.scss';
+
+.enter-account {
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+
+  .container {
+    width: 420px;
+    padding: 20px;
+    border: 1px solid $black-200;
+    border-radius: 5px;
+
+    .message {
+      padding: 10px 0;
+      font-weight: 600;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+
+      span {
+        color: $blue;
+        cursor: pointer;
+      }
+    }
+  }
+}

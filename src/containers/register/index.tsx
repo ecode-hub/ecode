@@ -1,52 +1,64 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button, message } from 'antd';
 import { ROUTES } from '@constants';
+import { register,login } from '@services';
+import { $storage } from '@utils';
 import logo from '@assets/icons/logo.png';
 import './index.scss';
 
 const RegisterForm = () => {
-  const onFinish = values => {
-    console.log('Success:', values);
-  };
-
-  const onFinishFailed = errorInfo => {
-    console.log('Failed:', errorInfo);
+  const history = useHistory();
+  const onFinish = data => {
+    if(data.password.length < 6 ){
+      message.warn('密码至少6位字符');
+      return;
+    }
+    if(data.password !== data.passwordConfirm ){
+      message.warn('两次密码不一致');
+      return;
+    }
+    register(data).then(res=>{
+      // message.success(res.message);
+      login(data).then(res=>{
+        $storage.token = res.token;
+        $storage.tokenTime = Date.now();
+        history.push(ROUTES.Home);
+      }).catch(err=>{
+        message.warn(err.message);
+      });
+    }).catch(err=>{
+      message.warn(err.message);
+    });
   };
 
   return (
     <Form
-      className="form"
-      initialValues={{
-        remember: true,
-      }}
+      className="bg-write"
       onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
     >
       <Form.Item
-        name="username"
+        name="name"
         rules={[
           {
             required: true,
             message: '必填',
-          },
+          }
         ]}
       >
-        <Input placeholder='用户名'/>
+        <Input placeholder='用户名' autoComplete="new-password"/>
       </Form.Item>
-
       <Form.Item
         name="password"
         rules={[
           {
             required: true,
             message: '必填',
-          },
+          }
         ]}
       >
-        <Input.Password placeholder='密码'/>
+        <Input.Password placeholder='密码' autoComplete="new-password"/>
       </Form.Item>
-
       <Form.Item
         name="passwordConfirm"
         rules={[
@@ -58,7 +70,6 @@ const RegisterForm = () => {
       >
         <Input.Password placeholder='确认密码'/>
       </Form.Item>
-
       <Form.Item
         name="email"
         rules={[

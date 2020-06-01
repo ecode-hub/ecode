@@ -14,6 +14,7 @@ import {
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { ROUTES } from '@constants';
 import { ConfigProvider } from '@config';
+import { $storage } from '@utils';
 
 import logo from '@assets/icons/logo.png';
 import avatarGirl from '@assets/images/avatar-girl.png';
@@ -41,7 +42,8 @@ function Header(props: RouteComponentProps<IProps>) {
         okText: '确定',
         cancelText: '取消',
         onOk: () => {
-          // TODO: 退出操作
+          $storage.token = '';
+          $storage.tokenTime = 0;
           console.log('退出成功');
           goTo(ROUTES.Login);
         }
