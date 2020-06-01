@@ -24,8 +24,11 @@ ECode 目前是一个开源项目，还有很多工作要做，主要包括两�
 
 #### 服务端
 
-- [ ] 数据库表设计
-- [ ] go + gin 搭建 Http Server
+- [x] 数据库表设计
+- [x] go + gin 搭建 Http Server
+- [ ] 图片 oss 储存
+- [ ] redis 和 mysql 持久化，以及备份策略
+
 
 #### 运维
 
