@@ -3,11 +3,12 @@ import { Input, Form, Button, message } from 'antd';
 import { resetPassword } from '@services';
 import { ROUTES } from '@constants';
 import { useHistory } from 'react-router-dom';
-import { parseQueryString } from '@utils';
+import { useRouterParams } from '@hooks';
 import './index.scss';
 
 function NewPwd() {
   const history = useHistory();
+  const param = useRouterParams();
   const onFinish = data => {
     if(data.password.length < 6 ){
       message.warn('密码至少6位字符');
@@ -17,7 +18,6 @@ function NewPwd() {
       message.warn('两次密码不一致');
       return;
     }
-    const param = parseQueryString(history.location.search);
     resetPassword({ ...data,...param }).then(res=>{
       history.push(ROUTES.ResetPassword.Success);
     }).catch(err=>{

@@ -2,7 +2,6 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "sourceMap": true,
-    "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "module": "esnext",
@@ -14,6 +13,8 @@
     "paths": {
       "@utils": ["src/utils/index.ts"],
       "@utils/*": ["src/utils/*"],
+      "@hooks": ["src/hooks/index.ts"],
+      "@hooks/*": ["src/hooks/*"],
       "@models": ["src/models/index.ts"],
       "@models/*": ["src/models/*"],
       "@config": ["src/config/index.ts"],

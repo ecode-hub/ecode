@@ -1,7 +1,7 @@
 import axios, { AxiosResponse, AxiosError, AxiosRequestConfig }from 'axios';
 import { SERVER_URL } from '@environments';
 import { $storage } from './storage';
-import { forEach } from 'lodash';
+import { forEach,get } from 'lodash';
 import { updateToken, updateTokenURL } from '@services';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -32,6 +32,7 @@ $http.interceptors.request.use((config: AxiosRequestConfig) => {
   }
   // 更新 token，每隔一天更新一次 token
   if(
+    token &&
     Date.now() - tokenTime > 1000 * 60 * 60 * 24 && 
     config.url !== updateTokenURL &&
     !isUpdateingToken
@@ -40,6 +41,7 @@ $http.interceptors.request.use((config: AxiosRequestConfig) => {
     setTimeout(()=>{
       updateToken(token).then((res)=>{
         $storage.token = res.token || '';
+        $storage.tokenTime = Date.now();
         $storage.tokenTime = Date.now();
       }).finally(()=>{
         isUpdateingToken = false;
@@ -55,11 +57,11 @@ $http.interceptors.request.use((config: AxiosRequestConfig) => {
 $http.interceptors.response.use(handleSuccess, handleError);
 
 function handleSuccess(response: AxiosResponse) {
-  return response.data;
+  return response.data || {};
 }
 
 function handleError(error: AxiosError) {
-  const data = error.response.data;
+  const data = error.response?.data || {};
   return Promise.reject(data);
 }
 

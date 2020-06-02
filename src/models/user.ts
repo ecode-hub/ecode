@@ -4,7 +4,8 @@ interface IUser {
 	introduction    :string;
 	github          :string;
 	PersonURL       :string;
-	Email           :string;
+	email           :string;
+	status          :number; 
 	created_at      :number;
 	updated_at      :number;
 }

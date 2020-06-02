@@ -2,7 +2,6 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { ROUTES } from '@constants';
 import { Form, Input, Button, message } from 'antd';
-import { $storage } from '@utils';
 import { login } from '@services';
 import logo from '@assets/icons/logo.png';
 import './index.scss';
@@ -11,8 +10,6 @@ const LoginForm = () => {
   const history = useHistory();
   const onFinish = data => {
     login(data).then(res=>{
-      $storage.token = res.token;
-      $storage.tokenTime = Date.now();
       history.push(ROUTES.Home);
     }).catch(err=>{
       message.warn(err.message);

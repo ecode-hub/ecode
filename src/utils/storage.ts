@@ -1,3 +1,5 @@
+import { IUser } from '@models';
+
 function formatKey(key: string) {
   const preKey = 'ECODE:';
   return `${preKey}${key.toUpperCase()}`;
@@ -20,13 +22,19 @@ function setData(key: string, data: any) {
 }
 
 const $storage = {
-  set token(val) {
+  set token(val:string) {
     setData('token', val);
   },
   get token() {
     return getData<string>('token');
   },
-  set tokenTime(val) {
+  set userData(val:IUser) {
+    setData('userData', val);
+  },
+  get userData() {
+    return getData<IUser>('userData');
+  },
+  set tokenTime(val:number) {
     setData('tokenTime', val);
   },
   get tokenTime() {

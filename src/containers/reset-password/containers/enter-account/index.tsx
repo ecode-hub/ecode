@@ -1,15 +1,12 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
-import { parseQueryString } from '@utils';
 import { IfElse } from '@components';
+import { useRouterParams } from '@hooks';
 import { message } from 'antd';
 import { sendResetPasswordEmail } from '@services';
 import './index.scss';
 
 function EnterAccount() {
-  const history = useHistory();
-  const param = parseQueryString(history.location.search);
-
+  const param = useRouterParams();
   const onResend = () => { 
     sendResetPasswordEmail(param.email).then(res=>{
       message.warn(res.message);

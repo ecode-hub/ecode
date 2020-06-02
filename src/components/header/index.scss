@@ -5,7 +5,7 @@
   max-width: $app-width;
   min-height: 100%;
   margin: 0 auto;
-  padding-top: $header-height;
+  padding-top: $header-height + 20px;
 }
 
 #ecode-header {

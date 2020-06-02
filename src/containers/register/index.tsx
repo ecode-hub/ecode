@@ -19,10 +19,7 @@ const RegisterForm = () => {
       return;
     }
     register(data).then(res=>{
-      // message.success(res.message);
       login(data).then(res=>{
-        $storage.token = res.token;
-        $storage.tokenTime = Date.now();
         history.push(ROUTES.Home);
       }).catch(err=>{
         message.warn(err.message);
