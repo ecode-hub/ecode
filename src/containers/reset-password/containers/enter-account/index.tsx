@@ -9,7 +9,7 @@ function EnterAccount() {
   const param = useRouterParams();
   const onResend = () => { 
     sendResetPasswordEmail(param.email).then(res=>{
-      message.warn(res.message);
+      message.success(res.message);
     }).catch(err=>{
       message.warn(err.message);
     });
