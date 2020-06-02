@@ -12,11 +12,11 @@ import Login from './login';
 import Register from './register';
 import Home from './home';
 import User from './user';
-import Card from './card';
+import Cards from './cards';
+import Practice from './practice';
 import Browse from './browse';
 import Statistic from './statistic';
 import Notification from './notification';
-import Edit from './edit';
 import Subscribed from './subscribed';
 import Setting from './setting';
 import About from './about';
@@ -57,15 +57,15 @@ export default function Routers() {
         <Route path={ROUTES.Register} component={Register} />
         <Route path={ROUTES.Home} component={Home} />
         <Route path={ROUTES.User} component={User} />
-        <Route path={ROUTES.Card} component={Card} />
+        <Route path={ROUTES.Practice} component={Practice} />
         <Route path={ROUTES.Browse} component={Browse} />
         <Route path={ROUTES.Statistic} component={Statistic} />
         <Route path={ROUTES.Notification} component={Notification} />
-        <Route path={ROUTES.Edit} component={Edit} />
         <Route path={ROUTES.Subscribed} component={Subscribed} />
         <Route path={ROUTES.Setting} component={Setting} />
         <Route path={ROUTES.About} component={About} />
         <Route path={ROUTES.Email.Base} component={Email} />
+        <Route path={ROUTES.Cards.Base} component={Cards} />
         <Route path={ROUTES.ResetPassword.Base} component={ResetPassword} />
         <Route path="*" component={NoMatch} />
       </Switch>

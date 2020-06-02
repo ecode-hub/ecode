@@ -18,7 +18,7 @@ import {
 
 import './index.scss';
 
-function Card() {
+function Practice() {
   const [side, setSide] = useState<ECardSide>(ECardSide.TOP);
   const [cardData, setCardData] = useState<ICard[]>([]);
   const [currentCardIndex, setCurrentCardIndex] = useState<number>(0);
@@ -69,7 +69,7 @@ function Card() {
     <HeaderWraper>
       <BarWraper>
         <Header />
-        <div id='main-card'>
+        <div className='practice'>
           <div id='markdown-container'>
             {renderMarkdown()}
           </div>
@@ -84,4 +84,4 @@ function Card() {
   );
 }
 
-export default Card;
+export default Practice;

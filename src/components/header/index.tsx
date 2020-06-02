@@ -94,15 +94,15 @@ function Header(props: RouteComponentProps<IProps>) {
         <nav className='main-nav'>
           <ul className='ul-format nav-list'>
             <li className='nav-browse' onClick={() => goTo(ROUTES.Browse)}>
-              				浏览
+              浏览
             </li>
             {/* <li className='nav-statistic' onClick={() => goTo(ROUTES.Statistic)}>
-              				统计
-            			</li> */}
+              统计
+            </li> */}
             <li className='nav-empty'></li>
             <li className='nav-card'>
-              <Button type='primary' onClick={() => goTo(ROUTES.Card)}>
-                				学习
+              <Button type='primary' onClick={() => goTo(ROUTES.Practice)}>
+                学习
               </Button>
             </li>
             <li className='nav-notification'>

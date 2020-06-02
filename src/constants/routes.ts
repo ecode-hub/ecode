@@ -4,7 +4,7 @@ const ROUTES = {
   Register: '/Register',           // 注册页面
   Home: '/home',                   // 首页
   User: '/user',                   // 用户主页
-  Card: '/card',                   // 问答卡页面
+  Practice: '/practice',             // 练习页面
   Browse: '/browse',                // 浏览所有问题页面
   Statistic: '/statistic',           // 统计页面
   Notification: '/notification',   // 通知页面
@@ -24,7 +24,12 @@ const ROUTES = {
     EnterAccount: '/reset-password/enter-account', // 输入邮箱发送邮件
     SendEmail: '/reset-password/send-email', // 邮箱发送后的提示
     Success: '/reset-password/success', // 密码修改成功后的提示
-  }           
+  },
+  Cards: {     // 问答卡相关页面  
+    Base: '/cards',
+    Edit: '/cards/edit',
+    New: '/cards/new',
+  },                            
 };
 
 export {

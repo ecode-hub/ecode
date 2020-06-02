@@ -6,13 +6,13 @@ import {
 
 import './index.scss';
 
-function Edit() {
+function New() {
   return (
     <HeaderWraper>
       <Header />
-      <div>edit</div>
+      <div>new</div>
     </HeaderWraper>
   );
 }
 
-export default Edit;
+export default New;

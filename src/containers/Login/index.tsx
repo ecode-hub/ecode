@@ -58,7 +58,7 @@ const LoginForm = () => {
 const Login = () => {
   const history = useHistory();
   const onForgetPassword = () => {
-    history.push(ROUTES.ResetPassword.EnterAccount);
+    history.push(ROUTES.ResetPassword.SendEmail);
   };
   const onRegister = () => {
     history.push(ROUTES.Register);

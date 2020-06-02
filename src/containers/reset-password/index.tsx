@@ -1,9 +1,7 @@
 import React from 'react';
 import {
   Switch,
-  Route,
-  Link,
-  Redirect
+  Route
 } from 'react-router-dom';
 import { ROUTES } from '@constants';
 import NewPwd from './containers/new-pwd';
