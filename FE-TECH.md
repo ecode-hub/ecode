@@ -467,3 +467,11 @@ https://webpack.js.org/guides/hot-module-replacement/
 ### 添加 CI
 
 ### 部署到云服务器
+
+---
+
+### set remote url
+
+```
+remote set-url origin git@github.com:WangYuLue/ecode.git
+```
