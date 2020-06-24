@@ -16,7 +16,7 @@ import './index.scss';
 
 function Home() {
   const param = useRouterParams();
-  const [userStatus , setUserstatus] = useState($storage.userData.status);
+  const [userStatus , setUserstatus] = useState($storage.userData?.status || 0);
   useEffect(()=>{
     if(param.emailConfirmUser === 'success'){
       getUser().then(res=>{

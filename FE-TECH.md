@@ -473,5 +473,5 @@ https://webpack.js.org/guides/hot-module-replacement/
 ### set remote url
 
 ```
-remote set-url origin git@github.com:WangYuLue/ecode.git
+git remote set-url origin git@github.com:WangYuLue/ecode.git
 ```
