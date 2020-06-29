@@ -39,18 +39,21 @@ function Home() {
   //   });
   // },[]);
 
+  const _emailValidate = (
+    <IfElse if={$storage.userData && userStatus === 0}>
+      <Alert
+        message="您还没有完成你的账号验证"
+        description="部分功能受限，请完成您的电子邮箱验证"
+        type="warning"
+        closable
+      />
+    </IfElse>
+  );
+
   return (
     <HeaderWraper>
       <Header />
-      <IfElse if={userStatus === 0}>
-        <Alert
-          message="您还没有完成你的账号验证"
-          description="部分功能受限，请完成您的电子邮箱验证"
-          type="warning"
-          closable
-        />
-      </IfElse>
-      
+      {_emailValidate}
       <div>Hello ECode!</div>
     </HeaderWraper>
   );

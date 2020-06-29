@@ -42,8 +42,7 @@ function Header(props: RouteComponentProps<IProps>) {
         okText: '确定',
         cancelText: '取消',
         onOk: () => {
-          $storage.token = '';
-          $storage.tokenTime = 0;
+          $storage.clearAll();
           console.log('退出成功');
           goTo(ROUTES.Login);
         }
@@ -110,15 +109,24 @@ function Header(props: RouteComponentProps<IProps>) {
             </li>
           </ul>
         </nav>
-        <div className='header-avatar'>
-          <Dropdown
-            trigger={['click']}
-            overlayClassName='header-avatar-menu'
-            overlay={menu}
-            placement='bottomRight'>
-            <img className='avatar' src={avatarBoy}></img>
-          </Dropdown>
-        </div>
+        {
+          $storage.userData ? (
+            <div className='header-avatar'>
+              <Dropdown
+                trigger={['click']}
+                overlayClassName='header-avatar-menu'
+                overlay={menu}
+                placement='bottomRight'>
+                <img className='avatar' src={avatarBoy}></img>
+              </Dropdown>
+            </div>
+          ) : (
+            <div className='header-auth'>
+              <div className='header-login' onClick={() => goTo(ROUTES.Login)}>登录</div>
+              <div className='header-register' onClick={() => goTo(ROUTES.Register)}>注册</div>
+            </div>
+          ) 
+        }
       </div>
     </header>
   );

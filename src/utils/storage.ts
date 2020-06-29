@@ -40,6 +40,9 @@ const $storage = {
   get tokenTime() {
     return getData<number>('tokenTime');
   },
+  clearAll() {
+    localStorage.clear();
+  }
 };
 
 export {

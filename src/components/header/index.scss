@@ -75,6 +75,18 @@
       }
     }
 
+    .header-auth {
+      display: flex;
+      color: $blue;
+      font-size: 16px;
+      cursor: pointer;
+
+      .header-login::after {
+        margin: 0 0.4rem;
+        content: "·";
+      }
+    }
+
     .header-avatar {
       .avatar {
         width: 36px;
