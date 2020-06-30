@@ -1,0 +1,62 @@
+@import '~@styles/color.scss';
+@import '~@styles/global.scss';
+
+.markdown-editor {
+  height: 100%;
+
+  $editorHeaderHeight: 63px;
+
+  .editor-header {
+    display: flex;
+    align-items: center;
+    height: $header-height;
+    padding: 0 20px;
+    border-bottom: 1px solid $b;
+
+    & > * {
+      margin: 0 10px;
+    }
+
+    .title {
+      flex: 1;
+      margin: 0 100px 0 0;
+      font-weight: 600;
+      font-size: 24px;
+      border: 0;
+      outline: none;
+    }
+
+    .empty {
+      flex: 1;
+    }
+  }
+
+  .editor-container {
+    display: flex;
+    height: calc(100% - #{$header-height});
+
+    .textarea {
+      flex: 1;
+      padding: 20px;
+      background: #f8f9fa;
+
+      textarea {
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 16px;
+        background: #f8f9fa;
+        border: 0;
+        outline: none;
+        resize: none;
+      }
+    }
+
+    .markdown-container {
+      flex: 1;
+      padding: 20px;
+      border-left: 1px solid $b;
+    }
+  }
+}

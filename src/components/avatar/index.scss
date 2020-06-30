@@ -1,0 +1,14 @@
+@import '~@styles/global.scss';
+
+.avatar-container {
+  .avatar {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+  }
+}
+
+.avatar-container-menu {
+  top: $header-height !important;
+  min-width: 150px !important;
+}

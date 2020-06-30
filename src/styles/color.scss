@@ -92,18 +92,23 @@ $bronze: #caa789;
 $bronze-lighter: #f2e9e1;
 $bronze-darker: #ab8265;
 
-$fc-dark: #0c0d0e;
-$fc-medium: #3c4146;
-$fc-light: #6a737c;
-$focus-ring: rgba(0, 149, 255, 0.15);
-$focus-ring-success: rgba(166, 217, 183, 0.4);
-$focus-ring-warning: rgba(233, 198, 63, 0.4);
-$focus-ring-error: rgba(192, 45, 46, 0.15);
-$focus-ring-muted: rgba(36, 39, 41, 0.1);
+// $fc-dark: #0c0d0e;
+// $fc-medium: #3c4146;
+// $fc-light: #6a737c;
+// $focus-ring: rgba(0, 149, 255, 0.15);
+// $focus-ring-success: rgba(166, 217, 183, 0.4);
+// $focus-ring-warning: rgba(233, 198, 63, 0.4);
+// $focus-ring-error: rgba(192, 45, 46, 0.15);
+// $focus-ring-muted: rgba(36, 39, 41, 0.1);
+
+// 边框颜色
+$b:#dddddd;
+// 阴影
 $bs-sm: 0 1px 2px rgba(0, 0, 0, 0.03), 0 1px 4px rgba(0, 0, 0, 0.03),
   0 2px 8px rgba(8, 5, 5, 0.03);
 $bs-md: 0 1px 3px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.06),
   0 3px 8px rgba(0, 0, 0, 0.09);
 $bs-lg: 0 1px 4px rgba(0, 0, 0, 0.09), 0 3px 8px rgba(0, 0, 0, 0.09),
   0 4px 13px rgba(0, 0, 0, 0.13);
-$scrollbar: rgba(0, 0, 0, 0.2);
+
+// $scrollbar: rgba(0, 0, 0, 0.2);

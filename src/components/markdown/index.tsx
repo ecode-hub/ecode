@@ -9,6 +9,7 @@ interface IProps {
 }
 
 const md = new MarkdownIt();
+
 const markdown = new MarkdownIt({
   highlight: function(str, lang) {
     if (lang && hljs.getLanguage(lang)) {
@@ -35,7 +36,7 @@ function Markdown(props: IProps) {
   }, [data]);
 
   return (
-    <div ref={ref}></div>
+    <div className='markdown' ref={ref}></div>
   );
 }
 

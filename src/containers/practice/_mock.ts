@@ -480,9 +480,22 @@ https://webpack.js.org/guides/hot-module-replacement/
   id: '2',
   question: '## js 是什么',
   answer: `
-~~~js
-var s = 1;
-~~~
+# sh
+
+|  表头   | 表头  |
+|  ----  | ----  |
+| 单元格  | 单元格 |
+| 单元格  | 单元格 |
+
+*我是斜体*
+
+***我是斜体并加粗***
+
+
+> 这里是一处引用。
+>
+> 这里是另外一处引用。
+
   `,
   created_at: 123,
   updated_at: 345
