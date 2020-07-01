@@ -1,6 +1,29 @@
 import { ICard } from '@models';
 
-export const data: ICard[] = [{
+export const data: ICard[] = [ {
+  id: '2',
+  question: '## js 是什么',
+  answer: `
+# sh
+
+|  表头   | 表头  |
+|  ----  | ----  |
+| 单元格  | 单元格 |
+| 单元格  | 单元格 |
+
+*我是斜体*
+
+***我是斜体并加粗***
+
+
+> 这里是一处引用。
+>
+> 这里是另外一处引用。
+
+  `,
+  created_at: 123,
+  updated_at: 345
+},{
   id: '1',
   question: '# html 是什么',
   answer: `
@@ -474,29 +497,6 @@ https://webpack.js.org/guides/hot-module-replacement/
 
 ### 部署到云服务器
 `,
-  created_at: 123,
-  updated_at: 345
-}, {
-  id: '2',
-  question: '## js 是什么',
-  answer: `
-# sh
-
-|  表头   | 表头  |
-|  ----  | ----  |
-| 单元格  | 单元格 |
-| 单元格  | 单元格 |
-
-*我是斜体*
-
-***我是斜体并加粗***
-
-
-> 这里是一处引用。
->
-> 这里是另外一处引用。
-
-  `,
   created_at: 123,
   updated_at: 345
 }, {
