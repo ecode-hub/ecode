@@ -1,4 +1,4 @@
-interface IUser {
+export interface IUser {
   id              :number;
 	name            :string;
 	introduction    :string;
@@ -9,7 +9,3 @@ interface IUser {
 	created_at      :number;
 	updated_at      :number;
 }
-
-export {
-  IUser
-};

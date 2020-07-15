@@ -1,9 +1,11 @@
+import { $storage } from './storage';
+
 export * from './safe-parse';
 export * from './super-memo2';
 export * from './storage';
 export * from './http';
 
-const parseQueryString = (query):any => {
+export const parseQueryString = (query):any => {
   //取得查询字符串并去掉开头的问号
   const args = {};
   try {
@@ -23,6 +25,12 @@ const parseQueryString = (query):any => {
   return args;
 }; 
 
-export {
-  parseQueryString
-};
+export function getUserId():number {
+  let id = 0;
+  try{
+    id = $storage.userData.id;
+  }catch(e){
+    console.warn('getUserId error');
+  }
+  return id;
+}

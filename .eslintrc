@@ -19,7 +19,33 @@
     "block-spacing":"error",
     "key-spacing": ["error", { "beforeColon": false }],
     "object-curly-spacing": ["error", "always"],
-    "indent": ["error", 2]
-    // "react-hooks/exhaustive-deps": "warn"
+    "indent": ["error", 2],
+    "jsx-quotes": [
+      "error",
+      "prefer-single"
+    ],
+    "array-callback-return": "error",
+    "eqeqeq": "error",
+    "guard-for-in": "error",
+    "no-alert": "error",
+    "no-else-return": "error",
+    "no-extend-native": "error",
+    "no-console": "off",
+    "no-empty": "error",
+    "no-multiple-empty-lines": "error",
+    "no-unreachable": "error",
+    "no-param-reassign": "error",
+    "comma-dangle": "error",
+    "no-duplicate-imports": "error",
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    // "@typescript-eslint/no-unused-vars": [
+    //   "error"
+    // ],
+    "max-len": [
+      "error",
+      {
+        "code": 150
+      }
+    ]
   }
 }

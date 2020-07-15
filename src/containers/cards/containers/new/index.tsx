@@ -1,24 +1,31 @@
 import React, { useState } from 'react';
 import { Markdown } from '@components';
-import { Button } from 'antd';
+import { Button, message } from 'antd';
+import { postCard } from '@services';
 import { Avatar } from '@components/avatar';
 
 import './index.scss';
 
 function New() {
-  const [title, setTitle] = useState('');
-  const [data, setData] = useState('');
+  const [question, setQuestion] = useState('');
+  const [answer, setAnswer] = useState('');
   
   const onTitleChange = (event) => {
-    setTitle(event.target.value);
+    setQuestion(event.target.value);
   };
 
   const onDataChange = (event) => {
-    setData(event.target.value);
+    setAnswer(event.target.value);
   };
   
   const onPublish = () => {
-    console.log('publish');
+    if(!question || !answer){
+      message.warn('标题或内容不能为空');
+      return;
+    }
+    postCard({ question, answer }).then(res=>{
+      message.success(res.message);
+    });
   };
 
   return (
@@ -26,7 +33,7 @@ function New() {
       <div className='editor-header'>
         <input 
           type='text' 
-          value={title}
+          value={question}
           className='title'
           placeholder='输入答题卡标题...'
           onChange={onTitleChange}
@@ -39,10 +46,10 @@ function New() {
       </div>
       <div className='editor-container'>
         <div className='textarea'>
-          <textarea value={data} onChange={onDataChange}></textarea>
+          <textarea value={answer} onChange={onDataChange}></textarea>
         </div>
         <div className='markdown-container'>
-          <Markdown data={data}/>
+          <Markdown data={answer}/>
         </div>
       </div>
       

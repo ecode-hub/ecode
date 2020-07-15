@@ -20,7 +20,7 @@ function obj2FormData(data: any) {
 // 带额外带头的 http
 const $http = axios.create({
   baseURL: SERVER_URL,
-  timeout: 1000 * 10,
+  timeout: 1000 * 10
 });
 
 
@@ -55,7 +55,7 @@ $http.interceptors.request.use((config: AxiosRequestConfig) => {
         .finally(()=>{
           isUpdateingToken = false;
         });
-    },1000);
+    }, 1000);
   }
   if (config.params?.keep !== 'yes') {
     config.transformRequest = obj2FormData;

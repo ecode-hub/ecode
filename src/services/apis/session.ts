@@ -3,25 +3,24 @@ import {
   IAPILogin,
   IAPIRegister, 
   IAPIToken,
-  IAPICommon,
-  IAPIGetUser
+  IAPICommon
 } from '@models';
 import { pick } from 'lodash';
 
-const updateTokenURL = '/users/token';
+const updateTokenURL = '/token';
 
 function ping() {
   return $http.get('/ping');
 }
 
 function updateToken(token: string): Promise<IAPIToken>  {
-  return $http.post(updateTokenURL,{ token });
+  return $http.post(updateTokenURL, { token });
 }
 
 function login(form) : Promise<IAPILogin> {
-  const data = pick(form,['name','password']);
+  const data = pick(form, ['name', 'password']);
   return $http
-    .post<unknown,IAPILogin>('/users/login',data)
+    .post<unknown, IAPILogin>('/login', data)
     .then(res=>{
       // 保存登录信息到本地
       $storage.token = res.token;
@@ -32,16 +31,8 @@ function login(form) : Promise<IAPILogin> {
 }
 
 function register(form) : Promise<IAPIRegister> {
-  const data = pick(form,['name','password','email']);
-  return $http.post('/users/register',data);
-}
-
-function getUsers() {
-  return $http.get('/users/');
-}
-
-function getUser():Promise<IAPIGetUser> {
-  return $http.get(`/users/${$storage.userData.id}`);
+  const data = pick(form, ['name', 'password', 'email']);
+  return $http.post('/register', data);
 }
 
 // 发送重置密码邮件
@@ -55,7 +46,7 @@ function sendConfirmEmail(userid: number): Promise<IAPICommon>{
 }
 
 function resetPassword(form) : Promise<IAPICommon> {
-  const data = pick(form,['id','uuid','password']);
+  const data = pick(form, ['id', 'uuid', 'password']);
   return $http.post('/reset-password', data);
 }
 
@@ -66,8 +57,6 @@ export {
   ping,
   login,
   register,
-  getUser,
-  getUsers,
   sendResetPasswordEmail,
   sendConfirmEmail,
   resetPassword

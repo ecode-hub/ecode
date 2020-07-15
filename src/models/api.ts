@@ -5,7 +5,7 @@ interface IAPILogin{
   data: IUser
 }
 
-type IAPIGetUser = Pick<IAPILogin,'data'>
+type IAPIGetUser = Pick<IAPILogin, 'data'>
 
 interface IAPIRegister{
   message : string

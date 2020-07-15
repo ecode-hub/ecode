@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import {
   Header,
-  HeaderWraper
+  HeaderWraper,
+  IfElse
 } from '@components';
-import { getUsers, getUser } from '@services';
-import { IfElse } from '@components';
+import { getPublicCards, getPublicCard, getUser } from '@services';
 import { $storage } from '@utils';
 import { useRouterParams } from '@hooks';
 import { message, Alert, Modal } from 'antd';
@@ -16,7 +16,7 @@ import './index.scss';
 
 function Home() {
   const param = useRouterParams();
-  const [userStatus , setUserstatus] = useState($storage.userData?.status || 0);
+  const [userStatus, setUserstatus] = useState($storage.userData?.status || 0);
   useEffect(()=>{
     if(param.emailConfirmUser === 'success'){
       getUser().then(res=>{
@@ -30,21 +30,25 @@ function Home() {
         okText: '关闭'
       });
     }
-  },[param]);
+  }, [param]);
 
-  // useEffect(()=>{
-  //   getUsers().then(res=>{      
-  //     message.success('数据请求成功');
-  //     console.log(res);
-  //   });
-  // },[]);
+  useEffect(()=>{
+    // getCards().then(res=>{      
+    //   message.success('数据请求成功');
+    //   console.log(res);
+    // });
+    // getCard(22).then(res=>{      
+    //   message.success('数据请求成功');
+    //   console.log(res);
+    // });
+  }, []);
 
   const _emailValidate = (
     <IfElse if={$storage.userData && userStatus === 0}>
       <Alert
-        message="您还没有完成你的账号验证"
-        description="部分功能受限，请完成您的电子邮箱验证"
-        type="warning"
+        message='您还没有完成你的账号验证'
+        description='部分功能受限，请完成您的电子邮箱验证'
+        type='warning'
         closable
       />
     </IfElse>
