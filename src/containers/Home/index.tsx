@@ -12,7 +12,10 @@ import { ResendEmail } from './components/resend-email';
 const { warn } = Modal;
 
 import './index.scss';
+import S from './index.module.scss';
 
+// scss 模块化功能实现
+console.log(S);
 
 function Home() {
   const param = useRouterParams();
@@ -58,7 +61,7 @@ function Home() {
     <HeaderWraper>
       <Header />
       {_emailValidate}
-      <div>Hello ECode!</div>
+      <div className={S.test}>Hello ECode!</div>
     </HeaderWraper>
   );
 }

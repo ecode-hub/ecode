@@ -37,13 +37,36 @@ module.exports = {
         ]
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.module\.(css|scss)$/,
         use: [
           {
             loader: 'style-loader'
           },
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: "[name]__[local]__[hash:base64:10]",
+              },														
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
+      },
+      {
+        // 正则太难学不会，试了很久才写了一下正则；下面的正则表示：
+        // 可以通过 .scss 为结尾的样式文件， 但是不能通过以 .module.scss 为结尾的样式文件
+        // 这样做参考自 create-react-app， .scss 可以全局，.module.scss 做模块化
+        test: /(?<!\.module)\.(css|scss)$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
           },
           {
             loader: 'sass-loader'
