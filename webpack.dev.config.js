@@ -25,13 +25,13 @@ module.exports = merge(config, {
     historyApiFallback: true,
     overlay: {
       errors: true
-    },
+    }
   },
   plugins: [
     new webpack.NormalModuleReplacementPlugin(
       /.\/src\/environments\/index.ts/,
-      path.resolve(__dirname, 'src/environments/environment.dev.ts'),
-    ),
+      path.resolve(__dirname, 'src/environments/environment.dev.ts')
+    )
   ]
 });
 

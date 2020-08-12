@@ -1,6 +1,6 @@
 @import '~@styles/global.scss';
 
-.avatar-container {
+.container {
   .avatar {
     width: 36px;
     height: 36px;
@@ -8,7 +8,7 @@
   }
 }
 
-.avatar-container-menu {
+.menu {
   top: $header-height !important;
   min-width: 150px !important;
 }

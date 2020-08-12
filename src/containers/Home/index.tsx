@@ -61,7 +61,12 @@ function Home() {
     <HeaderWraper>
       <Header />
       {_emailValidate}
-      <div className={S.test}>Hello ECode!</div>
+      <div className={S.test}>
+        Hello ECode!
+        <div className={S.sub}>
+          sub
+        </div>
+      </div>
     </HeaderWraper>
   );
 }

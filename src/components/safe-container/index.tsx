@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Result } from 'antd';
 import { ErrorBoundary } from '@components/error-boundary';
-
 interface IProps {
   message?: JSX.Element | string;
 }

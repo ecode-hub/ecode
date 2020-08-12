@@ -46,7 +46,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: "[name]__[local]__[hash:base64:10]",
+                localIdentName: '[name]__[local]__[hash:base64:10]'
               },														
               sourceMap: true
             }
@@ -66,7 +66,7 @@ module.exports = {
             loader: 'style-loader'
           },
           {
-            loader: 'css-loader',
+            loader: 'css-loader'
           },
           {
             loader: 'sass-loader'
@@ -88,7 +88,7 @@ module.exports = {
       '@constants': path.resolve(__dirname, 'src/constants/'),
       '@containers': path.resolve(__dirname, 'src/containers/'),
       '@components': path.resolve(__dirname, 'src/components/'),
-      '@environments': path.resolve(__dirname, 'src/environments/'),
+      '@environments': path.resolve(__dirname, 'src/environments/')
     }
   },
   plugins: [

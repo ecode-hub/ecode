@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Dropdown } from 'antd';
 import {
-  BellFilled,
+  BellFilled
 } from '@ant-design/icons';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { ROUTES } from '@constants';
