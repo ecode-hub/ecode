@@ -15,20 +15,20 @@ const ROUTES = {
     Base: '/email',                  
     Send: '/email/send',
     Success: '/email/success',
-    Fail: '/email/fail',
+    Fail: '/email/fail'
   },  
   ResetPassword: {
     Base: '/reset-password',
     NewPwd: '/reset-password/new-pwd',    // 点击邮箱发送的链接后，设置新密码
     EnterAccount: '/reset-password/enter-account', // 输入邮箱发送邮件
     SendEmail: '/reset-password/send-email', // 邮箱发送后的提示
-    Success: '/reset-password/success', // 密码修改成功后的提示
+    Success: '/reset-password/success' // 密码修改成功后的提示
   },
   Cards: {     // 问答卡相关页面  
     Base: '/cards',
     Edit: '/cards/edit',
-    New: '/cards/new',
-  },                            
+    New: '/cards/new'
+  }                            
 };
 
 export {

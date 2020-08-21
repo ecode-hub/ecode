@@ -22,7 +22,7 @@ function CardsRouter() {
       <Route exact path={ROUTES.Cards.Base} component={Cards}/>
       <Route path={ROUTES.Cards.Edit} component={Edit}/>
       <Route path={ROUTES.Cards.New} component={New}/>
-      <Route path="*" component={NoMatch} />
+      <Route path='*' component={NoMatch} />
     </Switch>
   );
 }

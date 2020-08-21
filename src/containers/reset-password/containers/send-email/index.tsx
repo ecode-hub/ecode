@@ -17,30 +17,30 @@ function SendEmail() {
   };
 
   return (
-    <div className="send-email">
-      <div className="container">
+    <div className='send-email'>
+      <div className='container'>
         <h3>重置密码</h3>
         <div className='hr'></div>
         <Form
-          className="bg-write form"
+          className='bg-write form'
           layout='vertical'
           hideRequiredMark={true}
           onFinish={onFinish}
         >
           <Form.Item
-            label="请输入要重置密码的邮箱账号"
-            name="email"
+            label='请输入要重置密码的邮箱账号'
+            name='email'
             rules={[
               {
                 required: true,
-                message: '必填',
-              },
+                message: '必填'
+              }
             ]}
           >
             <Input placeholder='邮箱'/>
           </Form.Item>
           <Form.Item >
-            <Button type="primary" htmlType="submit" block>
+            <Button type='primary' htmlType='submit' block>
               下一步
             </Button>
           </Form.Item>

@@ -51,18 +51,18 @@ function Practice() {
     if (currentCard) {
       if (side === ECardSide.TOP) {
         return <Markdown data={currentCard.question} />;
-      } else {
-        return (
-          <Fragment>
-            <Markdown data={currentCard.question} />
-            <div className='horizontal-line'></div>
-            <Markdown data={currentCard.answer} />
-          </Fragment>
-        );
-      }
-    } else {
-      return '加载中';
-    }
+      } 
+      return (
+        <Fragment>
+          <Markdown data={currentCard.question} />
+          <div className='horizontal-line'></div>
+          <Markdown data={currentCard.answer} />
+        </Fragment>
+      );
+      
+    } 
+    return '加载中';
+    
   };
 
   return (

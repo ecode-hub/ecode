@@ -16,11 +16,11 @@ function EnterAccount() {
   };
 
   return (
-    <div className="enter-account">
-      <div className="container">
+    <div className='enter-account'>
+      <div className='container'>
         <h3>重置密码</h3>
-        <div className="hr"></div>
-        <div className="message">
+        <div className='hr'></div>
+        <div className='message'>
           <IfElse if={!!param.email}>
             我们已经向您的注册邮箱 {param.email} 发送了一封密码找回邮件，请您注意接收邮件
           </IfElse>

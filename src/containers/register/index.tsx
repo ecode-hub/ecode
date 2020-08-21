@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Form, Input, Button, message } from 'antd';
 import { ROUTES } from '@constants';
-import { register,login } from '@services';
+import { register, login } from '@services';
 import { $storage } from '@utils';
 import logo from '@assets/icons/logo.png';
 import './index.scss';
@@ -31,56 +31,56 @@ const RegisterForm = () => {
 
   return (
     <Form
-      className="bg-write"
+      className='bg-write'
       onFinish={onFinish}
     >
       <Form.Item
-        name="name"
+        name='name'
         rules={[
           {
             required: true,
-            message: '必填',
+            message: '必填'
           }
         ]}
       >
-        <Input placeholder='用户名' autoComplete="new-password"/>
+        <Input placeholder='用户名' autoComplete='new-password'/>
       </Form.Item>
       <Form.Item
-        name="password"
+        name='password'
         rules={[
           {
             required: true,
-            message: '必填',
+            message: '必填'
           }
         ]}
       >
-        <Input.Password placeholder='密码' autoComplete="new-password"/>
+        <Input.Password placeholder='密码' autoComplete='new-password'/>
       </Form.Item>
       <Form.Item
-        name="passwordConfirm"
+        name='passwordConfirm'
         rules={[
           {
             required: true,
-            message: '必填',
-          },
+            message: '必填'
+          }
         ]}
       >
         <Input.Password placeholder='确认密码'/>
       </Form.Item>
       <Form.Item
-        name="email"
+        name='email'
         rules={[
           {
             required: true,
-            message: '必填',
-          },
+            message: '必填'
+          }
         ]}
       >
         <Input placeholder='邮箱'/>
       </Form.Item>
 
       <Form.Item >
-        <Button type="primary" htmlType="submit" block>
+        <Button type='primary' htmlType='submit' block>
           注册
         </Button>
       </Form.Item>
@@ -95,8 +95,8 @@ const Register = () => {
     history.push(ROUTES.Login);
   };
   return (
-    <div className="register bg-gray full">
-      <div className="register-container bg-write">
+    <div className='register bg-gray full'>
+      <div className='register-container bg-write'>
         <img className='logo' src={logo}></img>
         <RegisterForm/>
         <footer>

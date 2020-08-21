@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Routers from './containers/routers';
 import { ConfigProvider as AntdConfigProvider } from 'antd';
-import { ConfigProvider,config } from '@config';
+import { ConfigProvider, config } from '@config';
 import { ping } from '@services';
 import zhCN from 'antd/es/locale/zh_CN';
 import 'antd/dist/antd.css';

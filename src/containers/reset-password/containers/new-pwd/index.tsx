@@ -18,7 +18,7 @@ function NewPwd() {
       message.warn('两次密码不一致');
       return;
     }
-    resetPassword({ ...data,...param }).then(res=>{
+    resetPassword({ ...data, ...param }).then(res=>{
       history.push(ROUTES.ResetPassword.Success);
     }).catch(err=>{
       message.warn(err.message);
@@ -26,40 +26,40 @@ function NewPwd() {
   };
 
   return (
-    <div className="new-pwd">
-      <div className="container">
+    <div className='new-pwd'>
+      <div className='container'>
         <h3>重置密码</h3>
         <div className='hr'></div>
         <Form
-          className="bg-write form"
+          className='bg-write form'
           style={{ paddingTop: '16px' }}
           layout='vertical'
           onFinish={onFinish}
         >
           <Form.Item
-            name="password"
+            name='password'
             rules={[
               {
                 required: true,
-                message: '必填',
-              },
+                message: '必填'
+              }
             ]}
           >
             <Input.Password placeholder='设置密码'/>
           </Form.Item>
           <Form.Item
-            name="passwordConfirm"
+            name='passwordConfirm'
             rules={[
               {
                 required: true,
-                message: '必填',
-              },
+                message: '必填'
+              }
             ]}
           >
             <Input.Password placeholder='确认密码'/>
           </Form.Item>
           <Form.Item >
-            <Button type="primary" htmlType="submit" block>
+            <Button type='primary' htmlType='submit' block>
               下一步
             </Button>
           </Form.Item>

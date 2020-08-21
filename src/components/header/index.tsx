@@ -12,6 +12,10 @@ import logo from '@assets/icons/logo.png';
 
 import { Avatar } from '@components/avatar';
 import './index.scss';
+import S from './index.module.scss';
+
+console.log(S);
+
 
 interface IProps {
 
@@ -36,7 +40,8 @@ function Header(props: RouteComponentProps<IProps>) {
         <nav className='main-nav'>
           <ul className='ul-format nav-list'>
             <li className='nav-browse' onClick={() => goTo(ROUTES.Browse)}>
-              浏览
+              <div className={S.sub}>浏览</div>
+              
             </li>
             {/* <li className='nav-statistic' onClick={() => goTo(ROUTES.Statistic)}>
               统计

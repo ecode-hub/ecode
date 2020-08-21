@@ -19,7 +19,7 @@ function Email() {
       <Route  path={ROUTES.Email.Send} component={Send}/>
       <Route  path={ROUTES.Email.Success} component={Success}/>
       <Route  path={ROUTES.Email.Fail} component={Fail}/>
-      <Route path="*" component={NoMatch} />
+      <Route path='*' component={NoMatch} />
     </Switch>
   );
 }

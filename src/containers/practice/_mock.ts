@@ -1,6 +1,6 @@
 import { ICard } from '@models';
 
-export const data: ICard[] = [ {
+export const data: ICard[] = [{
   id: '2',
   question: '## js 是什么',
   answer: `
@@ -23,7 +23,7 @@ export const data: ICard[] = [ {
   `,
   created_at: 123,
   updated_at: 345
-},{
+}, {
   id: '1',
   question: '# html 是什么',
   answer: `
@@ -408,7 +408,8 @@ yarn add lint-staged -D
 
 ### 16、添加热更新
 
-> 如果是 .js 文件，webpack 能良好的支持热更新；但是如果是 .ts 文件，由于 ts-loader 官方不支持 HMR，所以要做额外的处理，参考这个[链接](https://stackoverflow.com/questions/59818608/when-i-import-ts-suffix-files-webpack-hmr-not-work/59818711)
+> 如果是 .js 文件，webpack 能良好的支持热更新；但是如果是 .ts 文件，由于 ts-loader 官方不支持 HMR，所以要做额外的处理，
+参考这个[链接](https://stackoverflow.com/questions/59818608/when-i-import-ts-suffix-files-webpack-hmr-not-work/59818711)
 
 #### 安装相关依赖
 

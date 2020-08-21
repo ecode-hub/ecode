@@ -16,11 +16,12 @@ function calcFactor(oldFac: number, quality: number): number {
 * @params {number} a number between 0~5 representing the quality of review. 0 is the worse while 5 is the best.
 * @params {number} the factor of last schedual
 */
-function superMemo2(quality: number, lastSchedule: number, lastFactor: number) {
+function superMemo2(lastquality: number, lastSchedule: number, lastFactor: number) {
   let newFac;
   let curSchedule;
+  let quality = lastquality;
 
-  if (quality == null || quality < 0 || quality > 5) {
+  if (quality === null || quality < 0 || quality > 5) {
     quality = 0;
   }
 
@@ -31,7 +32,7 @@ function superMemo2(quality: number, lastSchedule: number, lastFactor: number) {
     if (lastSchedule === 1) {
       curSchedule = 6;
       newFac = lastFactor;
-    } else if (lastSchedule == null) {
+    } else if (lastSchedule === null) {
       curSchedule = 1;
       newFac = 2.5;
     } else {

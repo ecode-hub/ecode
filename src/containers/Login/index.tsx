@@ -18,33 +18,33 @@ const LoginForm = () => {
 
   return (
     <Form
-      className="bg-write"
+      className='bg-write'
       onFinish={onFinish}
     >
       <Form.Item
-        name="name"
+        name='name'
         rules={[
           {
             required: true,
-            message: '必填',
-          },
+            message: '必填'
+          }
         ]}
       >
         <Input placeholder='用户名'/>
       </Form.Item>
       <Form.Item
-        name="password"
+        name='password'
         rules={[
           {
             required: true,
-            message: '必填',
-          },
+            message: '必填'
+          }
         ]}
       >
         <Input.Password placeholder='密码'/>
       </Form.Item>
       <Form.Item >
-        <Button type="primary" htmlType="submit" block>
+        <Button type='primary' htmlType='submit' block>
           登录
         </Button>
       </Form.Item>
@@ -61,8 +61,8 @@ const Login = () => {
     history.push(ROUTES.Register);
   };
   return (
-    <div className="login bg-gray full">
-      <div className="login-container bg-write">
+    <div className='login bg-gray full'>
+      <div className='login-container bg-write'>
         <img className='logo' src={logo}></img>
         <LoginForm/>
         <footer>

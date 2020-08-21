@@ -10,11 +10,11 @@ import './index.scss';
 function Edit() {
   useEffect(()=>{
     let simplemde = new SimpleMDE({ element: document.getElementById('MyID') });
-  },[]);
+  }, []);
   return (
     <HeaderWraper>
       <Header />
-      <textarea id="MyID" />
+      <textarea id='MyID' />
       <div>edit</div>
     </HeaderWraper>
   );

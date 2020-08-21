@@ -67,7 +67,7 @@ export default function Routers() {
         <Route path={ROUTES.Email.Base} component={Email} />
         <Route path={ROUTES.Cards.Base} component={Cards} />
         <Route path={ROUTES.ResetPassword.Base} component={ResetPassword} />
-        <Route path="*" component={NoMatch} />
+        <Route path='*' component={NoMatch} />
       </Switch>
     </Router>
   );

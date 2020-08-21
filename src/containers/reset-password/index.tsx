@@ -19,7 +19,7 @@ function Email() {
       <Route path={ROUTES.ResetPassword.EnterAccount} component={EnterAccount}/>
       <Route path={ROUTES.ResetPassword.SendEmail} component={SendEmail}/>
       <Route path={ROUTES.ResetPassword.Success} component={Success}/>
-      <Route path="*" component={NoMatch} />
+      <Route path='*' component={NoMatch} />
     </Switch>
   );
 }

@@ -10,34 +10,34 @@ function Success() {
   const goToLogin = () => {
     history.push(ROUTES.Login);
   };
-  const [time , setTime] = useState(5);
+  const [time, setTime] = useState(5);
   useEffect(()=>{
     const timer = setInterval(()=>{
       setTime(time=>time-1);
-    },1000);
+    }, 1000);
     return ()=>{
       clearInterval(timer);
     };
-  },[setTime]);
+  }, [setTime]);
 
   useEffect(()=>{
     if(time<=0){
       goToLogin();
     }
-  },[time]);
+  }, [time]);
 
   return (
-    <div className="success">
-      <div className="container">
+    <div className='success'>
+      <div className='container'>
         <h3>密码重置成功</h3>
-        <div className="hr"></div>
-        <div className="icon">
+        <div className='hr'></div>
+        <div className='icon'>
           <CheckCircleFilled/>
         </div>
-        <div className="message">
+        <div className='message'>
           <span>{time}s</span>&nbsp;后自动跳转到登录页
         </div>
-        <Button type="primary" block onClick={goToLogin}>
+        <Button type='primary' block onClick={goToLogin}>
           立即前往
         </Button>
       </div>

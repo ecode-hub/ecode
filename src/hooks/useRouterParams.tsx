@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 
 const useRouterParams = (): any => {
   const history = useHistory();
-  const param = useMemo(()=>parseQueryString(history.location.search),[history]);
+  const param = useMemo(()=>parseQueryString(history.location.search), [history]);
   return param;
 };
 
