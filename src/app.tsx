@@ -8,11 +8,11 @@ import 'antd/dist/antd.css';
 import '@styles/global.scss';
 
 function App() {
-  useEffect(()=>{
+  useEffect(() => {
     ping()
-      .then(res=>{ 
+      .then(res => {
         console.log(res);
-      }).catch(err=>{
+      }).catch(err => {
         console.warn('无法连接服务器', err);
       });
   });

@@ -3,6 +3,7 @@
     "outDir": "./dist/",
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
     "moduleResolution": "node",
     "module": "esnext",
     "target": "es5",
@@ -11,25 +12,63 @@
     "allowJs": true,
     "baseUrl": "./",
     "paths": {
-      "@utils": ["src/utils/index.ts"],
-      "@utils/*": ["src/utils/*"],
-      "@hooks": ["src/hooks/index.ts"],
-      "@hooks/*": ["src/hooks/*"],
-      "@models": ["src/models/index.ts"],
-      "@models/*": ["src/models/*"],
-      "@config": ["src/config/index.ts"],
-      "@config/*": ["src/config/*"],
-      "@styles/*": ["src/styles/*"],
-      "@assets/*": ["src/assets/*"],
-      "@constants": ["src/constants/index.ts"],
-      "@constants/*": ["src/constants/*"],
-      "@services": ["src/services/index.ts"],
-      "@services/*": ["src/services/*"],
-      "@containers": ["src/containers/index.ts"],
-      "@containers/*": ["src/containers/*"],
-      "@components": ["src/components/index.ts"],
-      "@components/*": ["src/components/*"],
-      "@environments": ["src/environments/index.ts"]
+      "@utils": [
+        "src/utils/index.ts"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@hooks": [
+        "src/hooks/index.ts"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@models": [
+        "src/models/index.ts"
+      ],
+      "@models/*": [
+        "src/models/*"
+      ],
+      "@config": [
+        "src/config/index.ts"
+      ],
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@constants": [
+        "src/constants/index.ts"
+      ],
+      "@constants/*": [
+        "src/constants/*"
+      ],
+      "@services": [
+        "src/services/index.ts"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ],
+      "@containers": [
+        "src/containers/index.ts"
+      ],
+      "@containers/*": [
+        "src/containers/*"
+      ],
+      "@components": [
+        "src/components/index.ts"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@environments": [
+        "src/environments/index.ts"
+      ]
     }
   }
 }

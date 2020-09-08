@@ -47,7 +47,7 @@ module.exports = {
             options: {
               modules: {
                 localIdentName: '[name]__[local]__[hash:base64:10]'
-              },														
+              },
               sourceMap: true
             }
           },
@@ -57,7 +57,8 @@ module.exports = {
         ]
       },
       {
-        // 正则太难学不会，试了很久才写了一下正则；下面的正则表示：
+        // 正则太难学不会，试了很久才写了出了下面的正则；
+        // 这里用到了ES2018刚支持的后行断言(lookbehind)，它表示：
         // 可以通过 .scss 为结尾的样式文件， 但是不能通过以 .module.scss 为结尾的样式文件
         // 这样做参考自 create-react-app， .scss 可以全局，.module.scss 做模块化
         test: /(?<!\.module)\.(css|scss)$/,
