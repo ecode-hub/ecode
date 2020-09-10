@@ -51,7 +51,7 @@ function Practice() {
     if (currentCard) {
       if (side === ECardSide.TOP) {
         return <Markdown data={currentCard.question} />;
-      } 
+      }
       return (
         <Fragment>
           <Markdown data={currentCard.question} />
@@ -59,10 +59,8 @@ function Practice() {
           <Markdown data={currentCard.answer} />
         </Fragment>
       );
-      
-    } 
+    }
     return '加载中';
-    
   };
 
   return (

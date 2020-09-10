@@ -1,7 +1,7 @@
 import { $http, $storage } from '@utils';
-import { 
+import {
   IAPILogin,
-  IAPIRegister, 
+  IAPIRegister,
   IAPIToken,
   IAPICommon
 } from '@models';
@@ -13,15 +13,15 @@ function ping() {
   return $http.get('/ping');
 }
 
-function updateToken(token: string): Promise<IAPIToken>  {
+function updateToken(token: string): Promise<IAPIToken> {
   return $http.post(updateTokenURL, { token });
 }
 
-function login(form) : Promise<IAPILogin> {
+function login(form): Promise<IAPILogin> {
   const data = pick(form, ['name', 'password']);
   return $http
     .post<unknown, IAPILogin>('/login', data)
-    .then(res=>{
+    .then(res => {
       // 保存登录信息到本地
       $storage.token = res.token;
       $storage.tokenTime = Date.now();
@@ -30,22 +30,22 @@ function login(form) : Promise<IAPILogin> {
     });
 }
 
-function register(form) : Promise<IAPIRegister> {
+function register(form): Promise<IAPIRegister> {
   const data = pick(form, ['name', 'password', 'email']);
   return $http.post('/register', data);
 }
 
 // 发送重置密码邮件
-function sendResetPasswordEmail(email: string): Promise<IAPICommon>{
+function sendResetPasswordEmail(email: string): Promise<IAPICommon> {
   return $http.post(`email/send-reset-password/${email}`);
 }
 
 // 发送激活邮件
-function sendConfirmEmail(userid: number): Promise<IAPICommon>{
+function sendConfirmEmail(userid: number): Promise<IAPICommon> {
   return $http.post(`email/send-confirm/${userid}`);
 }
 
-function resetPassword(form) : Promise<IAPICommon> {
+function resetPassword(form): Promise<IAPICommon> {
   const data = pick(form, ['id', 'uuid', 'password']);
   return $http.post('/reset-password', data);
 }
