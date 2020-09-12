@@ -1,4 +1,4 @@
-import axios, { AxiosResponse, AxiosError, AxiosRequestConfig }from 'axios';
+import axios, { AxiosResponse, AxiosError, AxiosRequestConfig } from 'axios';
 import { SERVER_URL } from '@environments';
 import { $storage } from './storage';
 import { forEach, get } from 'lodash';
@@ -27,32 +27,32 @@ const $http = axios.create({
 let isUpdateingToken = false;
 
 $http.interceptors.request.use((config: AxiosRequestConfig) => {
-  const { token, tokenTime }  = $storage;
+  const { token, tokenTime } = $storage;
   if (token) {
     config.headers['Authorization'] = `Bearer ${token}`;
   }
   // 更新 token，每隔一天更新一次 token
   const freshTime = 1000 * 60 * 60 * 24;
-  if(
+  if (
     token &&
-    Date.now() - tokenTime > freshTime && 
+    Date.now() - tokenTime > freshTime &&
     config.url !== updateTokenURL &&
     !isUpdateingToken
-  ){
+  ) {
     isUpdateingToken = true;
-    setTimeout(()=>{
+    setTimeout(() => {
       updateToken(token)
-        .then((res)=>{
+        .then((res) => {
           $storage.token = res.token || '';
           $storage.tokenTime = Date.now();
           $storage.tokenTime = Date.now();
         })
-        .catch(()=>{
+        .catch(() => {
           $storage.clearAll();
           location.hash = ROUTES.Login;
           console.warn('token 过期，退出');
         })
-        .finally(()=>{
+        .finally(() => {
           isUpdateingToken = false;
         });
     }, 1000);
