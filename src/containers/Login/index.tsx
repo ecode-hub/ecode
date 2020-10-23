@@ -9,9 +9,9 @@ import './index.scss';
 const LoginForm = () => {
   const history = useHistory();
   const onFinish = data => {
-    login(data).then(res=>{
+    login(data).then(res => {
       history.push(ROUTES.Home);
-    }).catch(err=>{
+    }).catch(err => {
       message.warn(err.message);
     });
   };
@@ -30,7 +30,7 @@ const LoginForm = () => {
           }
         ]}
       >
-        <Input placeholder='用户名'/>
+        <Input placeholder='用户名' />
       </Form.Item>
       <Form.Item
         name='password'
@@ -41,7 +41,7 @@ const LoginForm = () => {
           }
         ]}
       >
-        <Input.Password placeholder='密码'/>
+        <Input.Password placeholder='密码' />
       </Form.Item>
       <Form.Item >
         <Button type='primary' htmlType='submit' block>
@@ -64,7 +64,7 @@ const Login = () => {
     <div className='login bg-gray full'>
       <div className='login-container bg-write'>
         <img className='logo' src={logo}></img>
-        <LoginForm/>
+        <LoginForm />
         <footer>
           <span onClick={onForgetPassword}>忘记密码</span>
           <span onClick={onRegister}>注册</span>
