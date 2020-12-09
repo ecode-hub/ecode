@@ -20,13 +20,13 @@ console.log(S);
 function Home() {
   const param = useRouterParams();
   const [userStatus, setUserstatus] = useState($storage.userData?.status || 0);
-  useEffect(()=>{
-    if(param.emailConfirmUser === 'success'){
-      getUser().then(res=>{
+  useEffect(() => {
+    if (param.emailConfirmUser === 'success') {
+      getUser().then(res => {
         $storage.userData = res.data;
         setUserstatus($storage.userData.status);
       });
-    }else if(param.emailConfirmUser === 'fail'){
+    } else if (param.emailConfirmUser === 'fail') {
       warn({
         title: '邮箱验证失败',
         content: ResendEmail(),
@@ -35,7 +35,7 @@ function Home() {
     }
   }, [param]);
 
-  useEffect(()=>{
+  useEffect(() => {
     // getCards().then(res=>{      
     //   message.success('数据请求成功');
     //   console.log(res);
